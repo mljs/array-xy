@@ -3,7 +3,7 @@
   [![NPM version][npm-image]][npm-url]
   [![npm download][download-image]][download-url]
 
-Merge abscissa values on similar ordinates.
+Merge abscissa values on similar ordinates and weight the group of abscissa.
 
 ## Installation
 
