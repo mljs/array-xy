@@ -1,6 +1,6 @@
 {
   "name": "array-xy-weighted-merge",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Merge abscissa values on similar ordinates and weight the group of abscissa",
   "main": "lib/index.js",
   "module": "src/index.js",

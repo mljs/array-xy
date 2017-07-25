@@ -1,6 +1,6 @@
 {
   "name": "array-xy-max-merge",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Merge abscissa values on similar ordinates and keeps the abscissa with bigger ordinate value",
   "main": "lib/index.js",
   "module": "src/index.js",
