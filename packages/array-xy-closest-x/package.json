@@ -1,7 +1,7 @@
 {
   "name": "array-xy-closest-x",
   "version": "0.0.0",
-  "description": "Get the closest x/y point for a specific x target",
+  "description": "Get the closest point for a specific abscissa value",
   "main": "lib/index.js",
   "module": "src/index.js",
   "files": [

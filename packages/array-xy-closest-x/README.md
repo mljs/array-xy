@@ -3,7 +3,7 @@
   [![NPM version][npm-image]][npm-url]
   [![npm download][download-image]][download-url]
 
-Get the closest x/y point for a specific x target.
+Get the closest point for a specific abscissa value.
 
 ## Installation
 
