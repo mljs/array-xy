@@ -3,7 +3,7 @@
   [![NPM version][npm-image]][npm-url]
   [![npm download][download-image]][download-url]
 
-Merge y values if the x value is in a list of centroids.
+Merge abscissa values if the ordinate value is in a list of centroids.
 
 ## Installation
 

@@ -1,11 +1,11 @@
 /**
- *
+ * Merge abscissa values if the ordinate value is in a list of centroids
  * @param {object} originalPoints
  * @param {Array<number>} originalPoints.x
  * @param {Array<number>} originalPoints.y
  * @param {Array<number>} centroids
  * @param {object} [options]
- * @param {number} [options.window = 0.01]
+ * @param {number} [options.window = 0.01] - has to be a positive number
  * @return {{x: Array<number>, y: Array<number>}}
  */
 export default function mergeByCentroids(originalPoints, centroids, options = {}) {
