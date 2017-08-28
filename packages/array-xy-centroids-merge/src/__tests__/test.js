@@ -1,0 +1,13 @@
+import mergeByCentroids from '..';
+
+const originalPoints = {
+    x: [0.01, 1.008, 1.010, 1.012, 1.02, 1.04],
+    y: [1, 1, 1, 1, 1, 1]
+};
+
+test('base case', () => {
+    expect(mergeByCentroids(originalPoints, [1.01, 1.04])).toEqual({
+        x: [1.01, 1.04],
+        y: [3, 1]
+    });
+});
