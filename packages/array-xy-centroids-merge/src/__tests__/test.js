@@ -11,3 +11,10 @@ test('base case', () => {
         y: [3, 1]
     });
 });
+
+test('specify options', () => {
+    expect(mergeByCentroids(originalPoints, [1, 1.03], {window: 0.013})).toEqual({
+        x: [1, 1.03],
+        y: [3, 2]
+    });
+});
