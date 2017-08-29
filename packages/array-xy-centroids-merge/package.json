@@ -1,0 +1,22 @@
+{
+  "name": "array-xy-centroids-merge",
+  "version": "0.0.0",
+  "description": "Merge abscissa values if the ordinate value is in a list of centroids",
+  "main": "lib/index.js",
+  "module": "src/index.js",
+  "files": [
+    "lib",
+    "src"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cheminfo-js/array-xy.git"
+  },
+  "keywords": [],
+  "author": "Miguel Asencio",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cheminfo-js/array-xy/issues"
+  },
+  "homepage": "https://github.com/cheminfo-js/array-xy/tree/master/packages/array-xy-ranges-merge#readme"
+}
