@@ -1,6 +1,6 @@
 {
   "name": "array-xy-centroids-merge",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Merge abscissa values if the ordinate value is in a list of centroids",
   "main": "lib/index.js",
   "module": "src/index.js",
