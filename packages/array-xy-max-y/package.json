@@ -1,6 +1,6 @@
 {
   "name": "array-xy-max-y",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Find the maximum ordinate value in a range of abscissas",
   "main": "lib/index.js",
   "module": "src/index.js",
