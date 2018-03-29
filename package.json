@@ -1,4 +1,5 @@
 {
+    "version": "0.0.1",
     "name": "array-xy",
     "description": "Functional utilities for sets of points",
     "main": "index.js",
