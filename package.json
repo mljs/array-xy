@@ -1,32 +1,36 @@
 {
-	"private": true,
-	"description": "Functional utilities for sets of points",
-	"scripts": {
-		"bootstrap": "lerna bootstrap",
-		"build": "npm run build-clean && lerna exec -- ../../node_modules/.bin/rollup -c ../../rollup.config.js",
-		"build-clean": "rimraf ./packages/*/lib/",
-		"eslint": "eslint packages *.js --cache",
-		"eslint-fix": "npm run eslint -- --fix",
-		"prepare": "lerna bootstrap",
-		"publish": "git pull --rebase && npm run build && npm run test-publish && lerna publish",
-		"test": "run-s prepare build test-only eslint",
-		"test-watch": "jest --watch",
-		"test-publish": "run-s test-only eslint",
-		"test-only": "jest"
-	},
-	"devDependencies": {
-		"babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
-		"eslint": "^4.8.0",
-		"eslint-config-cheminfo": "^1.8.0",
-		"eslint-plugin-no-only-tests": "^2.0.0",
-		"jest": "^21.2.1",
-		"jest-matcher-deep-close-to": "^1.0.2",
-		"lerna": "^2.1.1",
-		"npm-run-all": "^4.1.1",
-		"rimraf": "^2.6.1",
-		"rollup": "^0.50.0"
-	},
-	"jest": {
-		"testEnvironment": "node"
-	}
+    "name": "array-xy",
+    "description": "Functional utilities for sets of points",
+    "main": "index.js",
+    "scripts": {
+        "bootstrap": "lerna bootstrap",
+        "build":
+            "npm run build-clean && lerna exec -- ../../node_modules/.bin/rollup -c ../../rollup.config.js && cheminfo build",
+        "build-clean": "rimraf ./packages/*/lib/",
+        "eslint": "eslint packages *.js --cache",
+        "eslint-fix": "npm run eslint -- --fix",
+        "prepare": "lerna bootstrap",
+        "publish":
+            "git pull --rebase && npm run build && npm run test-publish && lerna publish",
+        "test": "run-s prepare build test-only eslint",
+        "test-watch": "jest --watch",
+        "test-publish": "run-s test-only eslint",
+        "test-only": "jest"
+    },
+    "devDependencies": {
+        "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
+        "cheminfo-tools": "^1.20.2",
+        "eslint": "^4.8.0",
+        "eslint-config-cheminfo": "^1.8.0",
+        "eslint-plugin-no-only-tests": "^2.0.0",
+        "jest": "^21.2.1",
+        "jest-matcher-deep-close-to": "^1.0.2",
+        "lerna": "^2.1.1",
+        "npm-run-all": "^4.1.1",
+        "rimraf": "^2.6.1",
+        "rollup": "^0.50.0"
+    },
+    "jest": {
+        "testEnvironment": "node"
+    }
 }
