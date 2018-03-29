@@ -6,10 +6,10 @@ const maxY = require('./packages/array-xy-max-y');
 const weightedMerge = require('./packages/array-xy-weighted-merge');
 
 module.exports = {
-    centroidsMerge,
-    closestX,
-    maxMerge,
-    maxY,
-    sortX,
-    weightedMerge
+    centroidsMerge: centroidsMerge.default,
+    closestX: closestX.default,
+    maxMerge: maxMerge.default,
+    maxY: maxY.default,
+    sortX: sortX.default,
+    weightedMerge: weightedMerge.default
 };
