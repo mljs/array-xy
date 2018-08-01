@@ -6,13 +6,14 @@
   "description": "Functional utilities for sets of points",
   "scripts": {
     "bootstrap": "lerna bootstrap",
-    "build": "npm run build-clean && lerna exec -- rollup -c ../../rollup.config.js",
-    "build-clean": "rimraf ./packages/*/lib/",
+    "build": "cheminfo build",
+    "build-lerna": "npm run build-lerna-clean && lerna exec -- rollup -c ../../rollup.config.js",
+    "build-lerna-clean": "rimraf ./packages/*/lib/",
     "eslint": "eslint packages/**/*.js --cache",
     "eslint-fix": "npm run eslint -- --fix",
     "prepare": "lerna bootstrap",
-    "publish": "git pull --rebase && npm run build && npm run test-publish && lerna publish",
-    "test": "run-s prepare build test-only eslint",
+    "publish": "git pull --rebase && npm run build-lerna && npm run test-publish && lerna publish",
+    "test": "run-s prepare build-lerna test-only eslint",
     "test-watch": "jest --watch",
     "test-publish": "run-s test-only eslint",
     "test-only": "jest"
