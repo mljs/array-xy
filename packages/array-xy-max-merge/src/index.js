@@ -7,37 +7,35 @@
  * @param {number} [options.groupWidth = 0.001] - window for abscissas to merge
  * @return {{x: Array<number>, y: Array<number>}}
  */
-export default function (points, options = {}) {
-    const {x, y} = points;
-    const {
-        groupWidth = 0.001
-    } = options;
+export default function maxMerge(points, options = {}) {
+  const { x, y } = points;
+  const { groupWidth = 0.001 } = options;
 
-    var merged = {x: [], y: []};
-    var maxAbscissa = {x: [], y: []};
-    var size = 0;
-    var index = 0;
+  var merged = { x: [], y: [] };
+  var maxAbscissa = { x: [], y: [] };
+  var size = 0;
+  var index = 0;
 
-    while (index < x.length) {
-        if ((size === 0) || (x[index] - merged.x[size - 1] > groupWidth)) {
-            maxAbscissa.x.push(x[index]);
-            maxAbscissa.y.push(y[index]);
-            merged.x.push(x[index]);
-            merged.y.push(y[index]);
-            index++;
-            size++;
-        } else {
-            if (y[index] > maxAbscissa.y[size - 1]) {
-                maxAbscissa.x[size - 1] = x[index];
-                maxAbscissa.y[size - 1] = y[index];
-            }
-            merged.x[size - 1] = x[index];
-            merged.y[size - 1] += y[index];
-            index++;
-        }
+  while (index < x.length) {
+    if (size === 0 || x[index] - merged.x[size - 1] > groupWidth) {
+      maxAbscissa.x.push(x[index]);
+      maxAbscissa.y.push(y[index]);
+      merged.x.push(x[index]);
+      merged.y.push(y[index]);
+      index++;
+      size++;
+    } else {
+      if (y[index] > maxAbscissa.y[size - 1]) {
+        maxAbscissa.x[size - 1] = x[index];
+        maxAbscissa.y[size - 1] = y[index];
+      }
+      merged.x[size - 1] = x[index];
+      merged.y[size - 1] += y[index];
+      index++;
     }
+  }
 
-    merged.x = maxAbscissa.x.slice();
+  merged.x = maxAbscissa.x.slice();
 
-    return merged;
+  return merged;
 }

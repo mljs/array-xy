@@ -1,5 +1,5 @@
 import binarySearch from 'binary-search';
-import {asc, desc} from 'num-sort';
+import { asc, desc } from 'num-sort';
 
 /**
  * @param {object} points
@@ -12,34 +12,34 @@ import {asc, desc} from 'num-sort';
  * @return {{index: number, value: number}}
  */
 export default function maxY(points, options = {}) {
-    const {x, y} = points;
-    let {
-        from = {index: 0},
-        to = {index: x.length},
-        reverse = false
-    } = options;
+  const { x, y } = points;
+  let {
+    from = { index: 0 },
+    to = { index: x.length },
+    reverse = false
+  } = options;
 
-    if (from.value !== undefined && from.index === undefined) {
-        from.index = calculateIndex(from.value, x, reverse);
+  if (from.value !== undefined && from.index === undefined) {
+    from.index = calculateIndex(from.value, x, reverse);
+  }
+
+  if (to.value !== undefined && to.index === undefined) {
+    to.index = calculateIndex(to.value, x, reverse);
+  }
+
+  var currentMax = Number.MIN_VALUE;
+  var currentIndex;
+  for (var i = from.index; i < to.index; i++) {
+    if (currentMax < y[i]) {
+      currentMax = y[i];
+      currentIndex = i;
     }
+  }
 
-    if (to.value !== undefined && to.index === undefined) {
-        to.index = calculateIndex(to.value, x, reverse);
-    }
-
-    var currentMax = Number.MIN_VALUE;
-    var currentIndex;
-    for (var i = from.index; i < to.index; i++) {
-        if (currentMax < y[i]) {
-            currentMax = y[i];
-            currentIndex = i;
-        }
-    }
-
-    return {
-        index: currentIndex,
-        value: currentMax
-    };
+  return {
+    index: currentIndex,
+    value: currentMax
+  };
 }
 
 /**
@@ -49,16 +49,16 @@ export default function maxY(points, options = {}) {
  * @return {number} index of the value in the array
  */
 function calculateIndex(value, x, reverse) {
-    let index;
-    if (reverse) {
-        index = binarySearch(x, value, desc);
-    } else {
-        index = binarySearch(x, value, asc);
-    }
+  let index;
+  if (reverse) {
+    index = binarySearch(x, value, desc);
+  } else {
+    index = binarySearch(x, value, asc);
+  }
 
-    if (index < 0) {
-        throw new Error(`the value ${value} doesn't belongs to the abscissa value`);
-    }
+  if (index < 0) {
+    throw new Error(`the value ${value} doesn't belongs to the abscissa value`);
+  }
 
-    return index;
+  return index;
 }
