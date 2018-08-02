@@ -9,4 +9,4 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### Features
 
-* **sortX:** sort a list of points ([38743e7](https://github.com/cheminfo-js/array-xy/commit/38743e7))
+* **sortX:** sort a list of points ([38743e7](https://github.com/mljs/array-xy/commit/38743e7))

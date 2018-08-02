@@ -9,4 +9,4 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### Features
 
-* **maxY:** select the greatest value in y ([1821da4](https://github.com/cheminfo-js/array-xy/commit/1821da4))
+* **maxY:** select the greatest value in y ([1821da4](https://github.com/mljs/array-xy/commit/1821da4))

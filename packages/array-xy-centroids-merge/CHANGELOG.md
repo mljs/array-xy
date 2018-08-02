@@ -9,4 +9,4 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### Features
 
-* **centroids-merge:** merge based on centroids ([e5f4710](https://github.com/cheminfo-js/array-xy/commit/e5f4710))
+* **centroids-merge:** merge based on centroids ([e5f4710](https://github.com/mljs/array-xy/commit/e5f4710))
