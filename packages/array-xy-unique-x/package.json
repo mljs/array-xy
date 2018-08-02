@@ -1,0 +1,35 @@
+{
+  "name": "array-xy-unique-x",
+  "version": "0.0.2",
+  "description": "Function to sum the y values if the x values are equals. The x array has to be ordered.",
+  "main": "lib/index.js",
+  "module": "src/index.js",
+  "files": [
+    "lib",
+    "src"
+  ],
+  "scripts": {
+    "eslint": "eslint src test",
+    "eslint-fix": "npm run eslint -- --fix",
+    "test": "npm run test-mocha && npm run eslint",
+    "test-mocha": "mocha --require should --reporter mocha-better-spec-reporter"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cheminfo-js/array-xy.git"
+  },
+  "keywords": [
+    "machine",
+    "learning",
+    "data",
+    "mining",
+    "datamining"
+  ],
+  "author": "lpatiny &lt;gb252243&gt;",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cheminfo-js/array-xy/issues"
+  },
+  "tonicExampleFilename": "./tonic.js",
+  "homepage": "https://github.com/cheminfo-js/array-sy/#readme"
+}
