@@ -12,10 +12,10 @@ export default function uniqueX(points = {}) {
     throw new Error('The X and Y arrays mush have the same length');
   }
 
-  var current = x[0];
-  var counter = 0;
+  let current = x[0];
+  let counter = 0;
 
-  for (var i = 1; i < x.length; i++) {
+  for (let i = 1; i < x.length; i++) {
     if (current !== x[i]) {
       counter++;
       current = x[i];
