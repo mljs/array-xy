@@ -7,7 +7,7 @@ import { asc, desc } from 'num-sort';
  * @param {Array<number>} points.y - ordinates values
  * @param {object} [options]
  * @param {object} [options.from = {index: 0}]
- * @param {object} [options.to = {index: x.length}]
+ * @param {object} [options.to = {index: x.length-1}]
  * @param {boolean} [options.reverse = false]
  * @return {{index: number, value: number}}
  */

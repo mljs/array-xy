@@ -1,6 +1,14 @@
 import binarySearch from 'binary-search';
 import { asc, desc } from 'num-sort';
 
+/**
+ *
+ * @param {object} originalPoints
+ * @param {Array<number>} originalPoints.x
+ * @param {Array<number>} originalPoints.y
+ * @param {*} options
+ * @return {{x: Array<number>, y: Array<number>}}
+ */
 export default function closestX(points, options) {
   const { x, y } = points;
   const { target = x[0], reverse = false } = options;

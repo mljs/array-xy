@@ -18,5 +18,6 @@
   "bugs": {
     "url": "https://github.com/mljs/array-xy/issues"
   },
-  "homepage": "https://github.com/mljs/array-xy/tree/master/packages/array-xy-ranges-merge#readme"
+  "homepage": "https://github.com/mljs/array-xy/tree/master/packages/array-xy-ranges-merge#readme",
+  "gitHead": "45a05c3000528998a8daa22f1f0fe03a66d05c32"
 }

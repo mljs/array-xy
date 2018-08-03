@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "array-xy",
+  "name": "ml-array-xy",
   "version": "0.1.0",
   "main": "./src/index.js",
   "description": "Functional utilities for sets of points",
