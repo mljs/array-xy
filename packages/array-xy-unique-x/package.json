@@ -1,6 +1,6 @@
 {
   "name": "ml-arrayxy-unique-x",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Function to sum the y values if the x values are equals. The x array has to be ordered.",
   "main": "lib/index.js",
   "module": "src/index.js",
