@@ -1,3 +1,5 @@
+import integral from './integral';
+
 /**
  *
  * Function that returns a Number array of equally spaced numberOfPoints
