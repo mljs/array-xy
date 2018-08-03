@@ -1,37 +1,37 @@
 # array-xy-closest-x
 
-  [![NPM version][npm-image]][npm-url]
-  [![npm download][download-image]][download-url]
+[![NPM version][npm-image]][npm-url]
+[![npm download][download-image]][download-url]
 
 Get the closest point for a specific abscissa value.
 
 ## Installation
 
-`$ npm install --save array-xy-closest-x`
+`$ npm install --save ml-arrayxy-closest-x`
 
 ## Usage
 
 ```js
-import closestX from 'array-xy-closest-x';
+import closestX from 'ml-arrayxy-closest-x';
 
 const regularCase = {
-    x: [-1, 0, 1, 2, 3, 4, 5, 6, 7],
-    y: [10, 11, 12, 13, 14, 15, 16, 17, 18]
+  x: [-1, 0, 1, 2, 3, 4, 5, 6, 7],
+  y: [10, 11, 12, 13, 14, 15, 16, 17, 18]
 };
-const result = closestX({x, y}, {target: 4.3});
+const result = closestX({ x, y }, { target: 4.3 });
 // {x: 4, y: 15};
 
 const reverseCase = {
-    x: [7, 6, 5, 4, 3, 2, 1, 0, -1],
-    y: [18, 17, 16, 15, 14, 13, 12, 11, 10]
+  x: [7, 6, 5, 4, 3, 2, 1, 0, -1],
+  y: [18, 17, 16, 15, 14, 13, 12, 11, 10]
 };
-const reverseResult = closestX(reverseCase, {target: -2, reverse: true});
+const reverseResult = closestX(reverseCase, { target: -2, reverse: true });
 // {x: -1, y: 10};
 ```
 
 ## License
 
-  [MIT](./LICENSE)
+[MIT](./LICENSE)
 
 [npm-image]: https://img.shields.io/npm/v/array-xy-closest-x.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/array-xy-closest-x

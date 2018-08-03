@@ -3,7 +3,7 @@ import { asc, desc } from 'num-sort';
 
 /**
  *
- * @param {object} originalPoints
+ * @param {object} points
  * @param {Array<number>} originalPoints.x
  * @param {Array<number>} originalPoints.y
  * @param {*} options

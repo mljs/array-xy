@@ -1,12 +1,9 @@
-import { format } from 'path';
-
 import sequentialFill from 'ml-array-sequential-fill';
 
 import equallySpacedSmooth from './equallySpacedSmooth';
 import equallySpacedSlot from './equallySpacedSlot';
 
 /**
- *
  * Function that returns a Number array of equally spaced numberOfPoints
  * containing a representation of intensities of the spectra arguments x
  * and y.
@@ -29,7 +26,6 @@ import equallySpacedSlot from './equallySpacedSlot';
  * @param {string} [options.variant='smooth']
  * @param {number} [options.numberOfPoints=100]
  * @return {object<x: Array, y:Array} new object with x / y array with the equally spaced data.
- *
  */
 export default function equallySpaced(arrayXY = {}, options = {}) {
   var { x, y } = arrayXY;

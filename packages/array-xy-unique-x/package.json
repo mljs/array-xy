@@ -1,5 +1,5 @@
 {
-  "name": "ml-array-xy-unique-x",
+  "name": "ml-arrayxy-unique-x",
   "version": "0.2.1",
   "description": "Function to sum the y values if the x values are equals. The x array has to be ordered.",
   "main": "lib/index.js",
@@ -32,5 +32,5 @@
   },
   "tonicExampleFilename": "./tonic.js",
   "homepage": "https://github.com/mljs/array-sy/#readme",
-  "gitHead": "45a05c3000528998a8daa22f1f0fe03a66d05c32"
+  "gitHead": "34f9f1559ca636dde9f676ddac73b4aee0dcbefa"
 }

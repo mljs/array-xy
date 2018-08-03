@@ -1,7 +1,7 @@
 import equallySpaced from '..';
 
 describe('equallySpaced', () => {
-  it.only('equallySpaced smooth', function () {
+  it('equallySpaced smooth', function () {
     var x = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     var y = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
@@ -19,7 +19,7 @@ describe('equallySpaced', () => {
       y: [1, 2, 3]
     });
 
-    var ans = equallySpaced(
+    ans = equallySpaced(
       { x, y },
       {
         from: 0.5,
@@ -33,7 +33,7 @@ describe('equallySpaced', () => {
       y: [0.5, 1.5, 2.5]
     });
 
-    var ans = equallySpaced(
+    ans = equallySpaced(
       { x, y },
       {
         from: 9.5,
@@ -67,10 +67,10 @@ describe('equallySpaced', () => {
       y: [1, 5, 9]
     });
 
-    var x = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-    var y = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    x = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    y = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-    var ans = equallySpaced(
+    ans = equallySpaced(
       { x, y },
       {
         from: -5,
@@ -85,10 +85,10 @@ describe('equallySpaced', () => {
       y: [0, 1, 5, 9, 0]
     });
 
-    var x = [0, 5, 10];
-    var y = [0, 5, 10];
+    x = [0, 5, 10];
+    y = [0, 5, 10];
 
-    var ans = equallySpaced(
+    ans = equallySpaced(
       { x, y },
       {
         from: 0,
@@ -106,7 +106,7 @@ describe('equallySpaced', () => {
     x = [0, 5, 10];
     y = [0, 5, 10];
 
-    var ans = equallySpaced(
+    ans = equallySpaced(
       { x, y },
       {
         from: 0,
@@ -123,7 +123,7 @@ describe('equallySpaced', () => {
 
     x = [10, 5, 0];
     y = [10, 5, 0];
-    var ans = equallySpaced(
+    ans = equallySpaced(
       { x, y },
       {
         from: 0,

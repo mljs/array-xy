@@ -1,19 +1,19 @@
 # arrayxy-uniquex
 
-  [![NPM version][npm-image]][npm-url]
-  [![build status][travis-image]][travis-url]
-  [![David deps][david-image]][david-url]
-  [![npm download][download-image]][download-url]
-  
+[![NPM version][npm-image]][npm-url]
+[![build status][travis-image]][travis-url]
+[![David deps][david-image]][david-url]
+[![npm download][download-image]][download-url]
+
 Function to sum the y values if the x values are equals. The x array has to be ordered.
 It is an in place modification
 
 ## Installation
 
-`npm i array-xy-unique-x`
+`npm i ml-arrayxy-unique-x`
 
 ```
-const uniqueX=require('array-xy-unique-x');
+const uniqueX=require('ml-arrayxy-unique-x');
 
   var x = [0, 0, 1, 2, 3, 3];
   var y = [1, 2, 3, 4, 5, 6];
