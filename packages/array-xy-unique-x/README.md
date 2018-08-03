@@ -10,10 +10,10 @@ It is an in place modification
 
 ## Installation
 
-`npm i ml-arrayxy-unique-x`
+`npm i ml-arrayxy-uniquex`
 
 ```
-const uniqueX=require('ml-arrayxy-unique-x');
+const uniqueX=require('ml-arrayxy-uniquex');
 
   var x = [0, 0, 1, 2, 3, 3];
   var y = [1, 2, 3, 4, 5, 6];

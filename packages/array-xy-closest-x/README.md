@@ -7,12 +7,12 @@ Get the closest point for a specific abscissa value.
 
 ## Installation
 
-`$ npm install --save ml-arrayxy-closest-x`
+`$ npm install --save ml-arrayxy-closestx`
 
 ## Usage
 
 ```js
-import closestX from 'ml-arrayxy-closest-x';
+import closestX from 'ml-arrayxy-closestx';
 
 const regularCase = {
   x: [-1, 0, 1, 2, 3, 4, 5, 6, 7],
