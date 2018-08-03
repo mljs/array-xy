@@ -1,7 +1,7 @@
 {
   "name": "ml-array-xy-max-y",
-  "version": "0.2.2",
-  "description": "Find the maximum ordinate value in a range of abscissas",
+  "version": "0.2.3",
+  "description": "Find the maximum ordinate value in a range of abscissas of a {x:[], y:[]}",
   "main": "lib/index.js",
   "module": "src/index.js",
   "files": [
