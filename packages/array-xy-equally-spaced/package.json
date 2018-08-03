@@ -1,6 +1,6 @@
 {
   "name": "ml-array-xy-equally-spaced",
-  "version": "0.1.1",
+  "version": "0.2.1",
   "description": "Get the closest point for a specific abscissa value",
   "main": "lib/index.js",
   "module": "src/index.js",
