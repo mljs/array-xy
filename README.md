@@ -12,7 +12,7 @@ Functional utilities for sets of points
 | [array-xy-centroids-merge](./packages/array-xy-centroids-merge) | Merge abscissa values if the ordinate value is in a list of centroids                        |
 | [array-xy-sort-x](./packages/array-xy-sort-x)                   | Sort a set of point based on the abscissas values                                            |
 | [array-xy-max-y](./packages/array-xy-max-y)                     | Sort a set of point based on the abscissas values                                            |
-| [arrayxy-unique-x](./packages/array-xy-unique-x)                | Ensure that x values are unique                                                              |
+| [arrayxy-uniquex](./packages/array-xy-unique-x)                 | Ensure that x values are unique                                                              |
 
 import uniqueX from '..';
 
