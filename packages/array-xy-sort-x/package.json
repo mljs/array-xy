@@ -1,6 +1,6 @@
 {
   "name": "ml-array-xy-sort-x",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "Sort a set of point based on the abscissas values",
   "main": "lib/index.js",
   "module": "src/index.js",
