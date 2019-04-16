@@ -2,6 +2,7 @@ import sequentialFill from 'ml-array-sequential-fill';
 
 import equallySpacedSmooth from './equallySpacedSmooth';
 import equallySpacedSlot from './equallySpacedSlot';
+import getZones from './getZones';
 
 /**
  * Function that returns a Number array of equally spaced numberOfPoints
@@ -25,6 +26,7 @@ import equallySpacedSlot from './equallySpacedSlot';
  * @param {number} [options.to=x[x.length-1]]
  * @param {string} [options.variant='smooth']
  * @param {number} [options.numberOfPoints=100]
+ * @param {Array} [options.exclusions=[]] array of from / to that should be skipped for the generation of the points
  * @return {object<x: Array, y:Array} new object with x / y array with the equally spaced data.
  */
 export default function equallySpaced(arrayXY = {}, options = {}) {
@@ -35,11 +37,12 @@ export default function equallySpaced(arrayXY = {}, options = {}) {
     y = y.slice().reverse();
   }
 
-  var {
+  const {
     from = x[0],
     to = x[xLength - 1],
     variant = 'smooth',
-    numberOfPoints = 100
+    numberOfPoints = 100,
+    exclusions = []
   } = options;
 
   if (xLength !== y.length) {
@@ -54,19 +57,39 @@ export default function equallySpaced(arrayXY = {}, options = {}) {
     throw new RangeError("'to' option must be a number");
   }
 
+  if (typeof numberOfPoints !== 'number' || isNaN(numberOfPoints)) {
+    throw new RangeError("'numberOfPoints' option must be a number");
+  }
+
+  let zones = getZones(from, to, numberOfPoints, exclusions);
+
+  let xResult = [];
+  let yResult = [];
+  for (let zone of zones) {
+    let zoneResult = processZone(
+      x,
+      y,
+      zone.from,
+      zone.to,
+      zone.numberOfPoints,
+      variant
+    );
+    xResult.push(...zoneResult.x);
+    yResult.push(...zoneResult.y);
+  }
+  return { x: xResult, y: yResult };
+}
+
+function processZone(x, y, from, to, numberOfPoints, variant) {
+  if (numberOfPoints < 1) {
+    throw new RangeError('the number of points must be at least 1');
+  }
   var originalFrom = from;
   var originalTo = to;
 
   var reverse = from > to;
   if (reverse) {
     [from, to] = [to, from];
-  }
-
-  if (typeof numberOfPoints !== 'number' || isNaN(numberOfPoints)) {
-    throw new RangeError("'numberOfPoints' option must be a number");
-  }
-  if (numberOfPoints < 1) {
-    throw new RangeError('the number of points must be at least 1');
   }
 
   var output =
