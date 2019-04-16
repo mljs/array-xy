@@ -175,4 +175,46 @@ describe('equallySpaced', () => {
       y: [6, 5, 4, 3]
     });
   });
+
+  it('testing exclusions', function () {
+    var x = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    var y = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+    var ans = equallySpaced(
+      { x, y },
+      {
+        from: 8,
+        to: 1,
+        numberOfPoints: 4,
+        variant: 'smooth',
+        exclusions: [{ from: 2, to: 7 }]
+      }
+    );
+
+    expect(ans).toEqual({
+      x: [6, 5, 4, 3],
+      y: [6, 5, 4, 3]
+    });
+  });
+
+  it('testing inverted exclusions', function () {
+    var x = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    var y = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+    var ans = equallySpaced(
+      { x, y },
+      {
+        from: 8,
+        to: 1,
+        numberOfPoints: 4,
+        variant: 'smooth',
+        exclusions: [{ from: 2, to: 7 }]
+      }
+    );
+
+    expect(ans).toEqual({
+      x: [6, 5, 4, 3],
+      y: [6, 5, 4, 3]
+    });
+  });
 });

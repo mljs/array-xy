@@ -62,6 +62,7 @@ export default function equallySpaced(arrayXY = {}, options = {}) {
   }
 
   let zones = getZones(from, to, numberOfPoints, exclusions);
+  console.log(zones);
 
   let xResult = [];
   let yResult = [];
@@ -96,6 +97,16 @@ function processZone(x, y, from, to, numberOfPoints, variant) {
     variant === 'slot'
       ? equallySpacedSlot(x, y, from, to, numberOfPoints)
       : equallySpacedSmooth(x, y, from, to, numberOfPoints);
+
+  console.log(
+    originalFrom,
+    originalTo,
+    sequentialFill({
+      from: originalFrom,
+      to: originalTo,
+      size: numberOfPoints
+    })
+  );
 
   return {
     x: sequentialFill({
