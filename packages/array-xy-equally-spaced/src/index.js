@@ -37,7 +37,7 @@ export default function equallySpaced(arrayXY = {}, options = {}) {
     y = y.slice().reverse();
   }
 
-  const {
+  let {
     from = x[0],
     to = x[xLength - 1],
     variant = 'smooth',
@@ -61,8 +61,15 @@ export default function equallySpaced(arrayXY = {}, options = {}) {
     throw new RangeError("'numberOfPoints' option must be a number");
   }
 
-  let zones = getZones(from, to, numberOfPoints, exclusions);
-  console.log(zones);
+  var reverse = from > to;
+  if (reverse) {
+    [from, to] = [to, from];
+  }
+
+  let zones = getZones(from, to, numberOfPoints, exclusions, reverse);
+  if (reverse) {
+    zones.sort((a, b) => b.from - a.from);
+  }
 
   let xResult = [];
   let yResult = [];
@@ -73,7 +80,8 @@ export default function equallySpaced(arrayXY = {}, options = {}) {
       zone.from,
       zone.to,
       zone.numberOfPoints,
-      variant
+      variant,
+      reverse
     );
     xResult.push(...zoneResult.x);
     yResult.push(...zoneResult.y);
@@ -81,16 +89,9 @@ export default function equallySpaced(arrayXY = {}, options = {}) {
   return { x: xResult, y: yResult };
 }
 
-function processZone(x, y, from, to, numberOfPoints, variant) {
+function processZone(x, y, from, to, numberOfPoints, variant, reverse) {
   if (numberOfPoints < 1) {
     throw new RangeError('the number of points must be at least 1');
-  }
-  var originalFrom = from;
-  var originalTo = to;
-
-  var reverse = from > to;
-  if (reverse) {
-    [from, to] = [to, from];
   }
 
   var output =
@@ -98,20 +99,10 @@ function processZone(x, y, from, to, numberOfPoints, variant) {
       ? equallySpacedSlot(x, y, from, to, numberOfPoints)
       : equallySpacedSmooth(x, y, from, to, numberOfPoints);
 
-  console.log(
-    originalFrom,
-    originalTo,
-    sequentialFill({
-      from: originalFrom,
-      to: originalTo,
-      size: numberOfPoints
-    })
-  );
-
   return {
     x: sequentialFill({
-      from: originalFrom,
-      to: originalTo,
+      from: reverse ? to : from,
+      to: reverse ? from : to,
       size: numberOfPoints
     }),
     y: reverse ? output.reverse() : output

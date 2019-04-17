@@ -183,8 +183,8 @@ describe('equallySpaced', () => {
     var ans = equallySpaced(
       { x, y },
       {
-        from: 8,
-        to: 1,
+        from: 1,
+        to: 8,
         numberOfPoints: 4,
         variant: 'smooth',
         exclusions: [{ from: 2, to: 7 }]
@@ -192,8 +192,8 @@ describe('equallySpaced', () => {
     );
 
     expect(ans).toEqual({
-      x: [6, 5, 4, 3],
-      y: [6, 5, 4, 3]
+      x: [1, 2, 7, 8],
+      y: [1, 2, 7, 8]
     });
   });
 
@@ -208,13 +208,13 @@ describe('equallySpaced', () => {
         to: 1,
         numberOfPoints: 4,
         variant: 'smooth',
-        exclusions: [{ from: 2, to: 7 }]
+        exclusions: [{ from: 7, to: 2 }]
       }
     );
 
     expect(ans).toEqual({
-      x: [6, 5, 4, 3],
-      y: [6, 5, 4, 3]
+      x: [8, 7, 2, 1],
+      y: [8, 7, 2, 1]
     });
   });
 });
