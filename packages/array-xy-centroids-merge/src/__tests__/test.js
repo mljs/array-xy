@@ -6,7 +6,7 @@ const originalPoints = {
 };
 
 test('base case', () => {
-  expect(mergeByCentroids(originalPoints, [1.01, 1.04])).toEqual({
+  expect(mergeByCentroids(originalPoints, [1.01, 1.04])).toStrictEqual({
     x: [1.01, 1.04],
     y: [3, 1]
   });
@@ -15,7 +15,7 @@ test('base case', () => {
 test('specify options', () => {
   expect(
     mergeByCentroids(originalPoints, [1, 1.03], { window: 0.013 })
-  ).toEqual({
+  ).toStrictEqual({
     x: [1, 1.03],
     y: [3, 2]
   });

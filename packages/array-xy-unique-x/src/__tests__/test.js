@@ -6,8 +6,8 @@ describe('uniqueX', function () {
     var y = [1, 2, 3, 4, 5, 6];
     uniqueX({ x, y });
 
-    expect(x).toEqual([0, 1, 2, 3]);
-    expect(y).toEqual([3, 3, 4, 11]);
+    expect(x).toStrictEqual([0, 1, 2, 3]);
+    expect(y).toStrictEqual([3, 3, 4, 11]);
   });
 
   it('should yield the right array 2', function () {
@@ -15,8 +15,8 @@ describe('uniqueX', function () {
     var y = [1, 2, 3, 4];
     uniqueX({ x, y });
 
-    expect(x).toEqual([0, 1, 2, 3]);
-    expect(y).toEqual([1, 2, 3, 4]);
+    expect(x).toStrictEqual([0, 1, 2, 3]);
+    expect(y).toStrictEqual([1, 2, 3, 4]);
   });
 
   it('should yield the right array 3', function () {
@@ -24,7 +24,7 @@ describe('uniqueX', function () {
     var y = [1, 2, 3, 4];
     uniqueX({ x, y });
 
-    expect(x).toEqual([0]);
-    expect(y).toEqual([10]);
+    expect(x).toStrictEqual([0]);
+    expect(y).toStrictEqual([10]);
   });
 });

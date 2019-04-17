@@ -14,7 +14,7 @@ describe('equallySpaced', () => {
       }
     );
 
-    expect(ans).toEqual({
+    expect(ans).toStrictEqual({
       x: [1, 2, 3],
       y: [1, 2, 3]
     });
@@ -28,7 +28,7 @@ describe('equallySpaced', () => {
       }
     );
 
-    expect(ans).toEqual({
+    expect(ans).toStrictEqual({
       x: [0.5, 1.5, 2.5],
       y: [0.5, 1.5, 2.5]
     });
@@ -42,7 +42,7 @@ describe('equallySpaced', () => {
       }
     );
 
-    expect(ans).toEqual({
+    expect(ans).toStrictEqual({
       x: [9.5, 10.5, 11.5],
       y: [9.5, 5, 0]
     });
@@ -62,7 +62,7 @@ describe('equallySpaced', () => {
       }
     );
 
-    expect(ans).toEqual({
+    expect(ans).toStrictEqual({
       x: [0, 5, 10],
       y: [1, 5, 9]
     });
@@ -80,7 +80,7 @@ describe('equallySpaced', () => {
       }
     );
 
-    expect(ans).toEqual({
+    expect(ans).toStrictEqual({
       x: [-5, 0, 5, 10, 15],
       y: [0, 1, 5, 9, 0]
     });
@@ -98,7 +98,7 @@ describe('equallySpaced', () => {
       }
     );
 
-    expect(ans).toEqual({
+    expect(ans).toStrictEqual({
       x: [0, 2.5, 5, 7.5, 10],
       y: [0, 0, 5, 0, 10]
     });
@@ -116,7 +116,7 @@ describe('equallySpaced', () => {
       }
     );
 
-    expect(ans).toEqual({
+    expect(ans).toStrictEqual({
       x: [0, 10],
       y: [2.5, 10]
     });
@@ -133,7 +133,7 @@ describe('equallySpaced', () => {
       }
     );
 
-    expect(ans).toEqual({
+    expect(ans).toStrictEqual({
       x: [0, 10],
       y: [2.5, 10]
     });
@@ -150,7 +150,7 @@ describe('equallySpaced', () => {
       }
     );
 
-    expect(ans).toEqual({
+    expect(ans).toStrictEqual({
       x: [4, 5, 6],
       y: [4, 5, 4]
     });
@@ -170,7 +170,7 @@ describe('equallySpaced', () => {
       }
     );
 
-    expect(ans).toEqual({
+    expect(ans).toStrictEqual({
       x: [6, 5, 4, 3],
       y: [6, 5, 4, 3]
     });
@@ -191,7 +191,7 @@ describe('equallySpaced', () => {
       }
     );
 
-    expect(ans).toEqual({
+    expect(ans).toStrictEqual({
       x: [1, 2, 7, 8],
       y: [1, 2, 7, 8]
     });
@@ -212,7 +212,7 @@ describe('equallySpaced', () => {
       }
     );
 
-    expect(ans).toEqual({
+    expect(ans).toStrictEqual({
       x: [8, 7, 2, 1],
       y: [8, 7, 2, 1]
     });

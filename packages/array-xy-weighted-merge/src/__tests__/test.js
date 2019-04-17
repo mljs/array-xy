@@ -1,5 +1,6 @@
 import weightedMerge from '..';
 
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { toBeDeepCloseTo } from 'jest-matcher-deep-close-to';
 
 expect.extend({ toBeDeepCloseTo });
@@ -20,7 +21,7 @@ describe('test weightedMerge', () => {
       ],
       4
     );
-    expect(merged.y).toEqual([21, 20, 21, 61]);
+    expect(merged.y).toStrictEqual([21, 20, 21, 61]);
   });
 
   it('custom value', () => {
@@ -33,6 +34,6 @@ describe('test weightedMerge', () => {
       ],
       4
     );
-    expect(merged.y).toEqual([21, 41, 61]);
+    expect(merged.y).toStrictEqual([21, 41, 61]);
   });
 });

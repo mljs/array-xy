@@ -6,7 +6,7 @@ describe('test maxY', () => {
       x: [1, 2, 3],
       y: [4, 8, 6]
     };
-    expect(maxY(points)).toEqual({
+    expect(maxY(points)).toStrictEqual({
       index: 1,
       value: 8
     });
@@ -21,7 +21,7 @@ describe('test maxY', () => {
       from: { index: 1 },
       to: { index: 4 }
     };
-    expect(maxY(points, options)).toEqual({
+    expect(maxY(points, options)).toStrictEqual({
       index: 2,
       value: 8
     });
@@ -36,7 +36,7 @@ describe('test maxY', () => {
       from: { index: 1 },
       to: { value: 5 }
     };
-    expect(maxY(points, options)).toEqual({
+    expect(maxY(points, options)).toStrictEqual({
       index: 2,
       value: 8
     });
@@ -51,7 +51,7 @@ describe('test maxY', () => {
       from: { value: 2 },
       to: { value: 5 }
     };
-    expect(maxY(points, options)).toEqual({
+    expect(maxY(points, options)).toStrictEqual({
       index: 2,
       value: 8
     });
@@ -67,7 +67,7 @@ describe('test maxY', () => {
       to: { value: 2 },
       reverse: true
     };
-    expect(maxY(points, options)).toEqual({
+    expect(maxY(points, options)).toStrictEqual({
       index: 2,
       value: 8
     });
