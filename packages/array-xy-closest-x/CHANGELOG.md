@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.3](https://github.com/mljs/array-xy/compare/ml-arrayxy-closestx@1.2.2...ml-arrayxy-closestx@1.2.3) (2019-04-17)
+
+**Note:** Version bump only for package ml-arrayxy-closestx
+
+
+
+
+
 <a name="1.2.2"></a>
 ## [1.2.2](https://github.com/mljs/array-xy/compare/ml-arrayxy-closestx@1.2.1...ml-arrayxy-closestx@1.2.2) (2018-08-16)
 
