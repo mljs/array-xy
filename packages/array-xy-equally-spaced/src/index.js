@@ -27,8 +27,9 @@ import getZones from './getZones';
  * @param {string} [options.variant='smooth']
  * @param {number} [options.numberOfPoints=100]
  * @param {Array} [options.exclusions=[]] array of from / to that should be skipped for the generation of the points
- * @return {object<x: Array, y:Array} new object with x / y array with the equally spaced data.
+ * @return {object<x: Array, y:Array>} new object with x / y array with the equally spaced data.
  */
+
 export default function equallySpaced(arrayXY = {}, options = {}) {
   var { x, y } = arrayXY;
   var xLength = x.length;
