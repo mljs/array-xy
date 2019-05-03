@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.7](https://github.com/mljs/array-xy/compare/ml-array-xy-max-y@0.2.6...ml-array-xy-max-y@0.2.7) (2019-05-03)
+
+**Note:** Version bump only for package ml-array-xy-max-y
+
+
+
+
+
 ## [0.2.6](https://github.com/mljs/array-xy/compare/ml-array-xy-max-y@0.2.5...ml-array-xy-max-y@0.2.6) (2019-04-17)
 
 **Note:** Version bump only for package ml-array-xy-max-y

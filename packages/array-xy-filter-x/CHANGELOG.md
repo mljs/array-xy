@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.0.2 (2019-05-03)
+
+**Note:** Version bump only for package ml-array-xy-filter-x
+
+
+
+
+
 <a name="0.2.4"></a>
 ## [0.2.4](https://github.com/mljs/array-xy/compare/ml-array-xy-sort-x@0.2.3...ml-array-xy-sort-x@0.2.4) (2018-08-16)
 

@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.7](https://github.com/mljs/array-xy/compare/ml-array-xy-weighted-merge@0.2.6...ml-array-xy-weighted-merge@0.2.7) (2019-05-03)
+
+**Note:** Version bump only for package ml-array-xy-weighted-merge
+
+
+
+
+
 <a name="0.2.6"></a>
 ## [0.2.6](https://github.com/mljs/array-xy/compare/ml-array-xy-weighted-merge@0.2.5...ml-array-xy-weighted-merge@0.2.6) (2018-08-16)
 
