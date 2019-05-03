@@ -1,4 +1,4 @@
-# array-xy-sort-x
+# array-xy-filter-x
 
 [![NPM version][npm-image]][npm-url]
 [![npm download][download-image]][download-url]
@@ -7,20 +7,26 @@ Sort a set of point based on the abscissas values.
 
 ## Installation
 
-`$ npm install --save ml-array-xy-sort-x`
+`$ npm install --save ml-array-xy-filter-x`
 
 ## Usage
 
 ```js
-import sortX from 'ml-array-xy-sort-x';
+import filterX from 'ml-array-xy-filter-x';
 
-const x = [6, 5, 4, 3, 2, 1, 0, -1];
-const y = [17, 16, 15, 14, 13, 12, 11, 10];
-sortX({ x, y });
+  const x = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  const y = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+  const points = { x, y };
+
+let result = filterX(points, {
+    from: 2.5,
+    to: 8.5,
+    exclusions: [{ from: 2, to: 4.5 }, { from: 5.5, to: 8 }]
+});
 
 /* result -> {
-    x: [-1, 0, 1, 2, 3, 4, 5, 6],
-    y: [10, 11, 12, 13, 14, 15, 16, 17]
+    x: [5, 8],
+    y: [6, 9]
 } */
 ```
 
@@ -28,7 +34,7 @@ sortX({ x, y });
 
 [MIT](./LICENSE)
 
-[npm-image]: https://img.shields.io/npm/v/array-xy-sort-x.svg?style=flat-square
-[npm-url]: https://npmjs.org/package/array-xy-sort-x
-[download-image]: https://img.shields.io/npm/dm/array-xy-sort-x.svg?style=flat-square
-[download-url]: https://npmjs.org/package/array-xy-sort-x
+[npm-image]: https://img.shields.io/npm/v/array-xy-filter-x.svg?style=flat-square
+[npm-url]: https://npmjs.org/package/array-xy-filter-x
+[download-image]: https://img.shields.io/npm/dm/array-xy-filter-x.svg?style=flat-square
+[download-url]: https://npmjs.org/package/array-xy-filter-x
