@@ -97,7 +97,7 @@ export default function equallySpaced(arrayXY = {}, options = {}) {
   }
 }
 
-function processZone(x, y, from, to, numberOfPoints, variant, reverse) {
+function processZone(x, y, from, to, numberOfPoints, variant) {
   if (numberOfPoints < 1) {
     throw new RangeError('the number of points must be at least 1');
   }

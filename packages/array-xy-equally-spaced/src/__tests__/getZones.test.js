@@ -70,22 +70,42 @@ describe('getZones', () => {
     ]);
   });
 
-  it('two symmetric exclusion', function () {
-    let zones = getZones(0, 10, 12, [{ from: 2, to: 4 }, { from: 6, to: 8 }]);
+  it('overlaping exclusionsn', function () {
+    let zones = getZones(0, 10, 4, [{ from: 2, to: 4 }, { from: 2, to: 8 }]);
     expect(zones).toEqual([
       {
         from: 0,
         to: 2,
-        numberOfPoints: 4
-      },
-      {
-        from: 4,
-        to: 6,
-        numberOfPoints: 4
+        numberOfPoints: 2
       },
       {
         from: 8,
         to: 10,
+        numberOfPoints: 2
+      }
+    ]);
+  });
+
+  it('outside range exclusion', function () {
+    let zones = getZones(0, 10, 4, [
+      { from: -2, to: -4 },
+      { from: 12, to: 14 }
+    ]);
+    expect(zones).toEqual([
+      {
+        from: 0,
+        to: 10,
+        numberOfPoints: 4
+      }
+    ]);
+  });
+
+  it('partial outside range exclusion', function () {
+    let zones = getZones(0, 10, 4, [{ from: -2, to: 2 }, { from: 8, to: 12 }]);
+    expect(zones).toEqual([
+      {
+        from: 2,
+        to: 8,
         numberOfPoints: 4
       }
     ]);

@@ -3,17 +3,12 @@ export default function getZones(from, to, numberOfPoints, exclusions = []) {
     [from, to] = [to, from];
   }
 
-  if (!exclusions || exclusions.length === 0) {
-    return [{ from, to, numberOfPoints }];
-  }
-
   // in exclusions from and to have to be defined
   exclusions = exclusions.filter(
     (exclusion) => exclusion.from !== undefined && exclusion.to !== undefined
   );
 
   exclusions = JSON.parse(JSON.stringify(exclusions));
-
   // we ensure that from before to
   exclusions.forEach((exclusion) => {
     if (exclusion.from > exclusion.to) {
@@ -34,6 +29,10 @@ export default function getZones(from, to, numberOfPoints, exclusions = []) {
     }
   }
   exclusions = exclusions.filter((exclusion) => exclusion.from < exclusion.to);
+
+  if (!exclusions || exclusions.length === 0) {
+    return [{ from, to, numberOfPoints }];
+  }
 
   // need to deal with overlapping exclusions and out of bound exclusions
 
@@ -61,11 +60,13 @@ export default function getZones(from, to, numberOfPoints, exclusions = []) {
 
     currentFrom = exclusion.to;
   }
-  zones.push({
-    from: currentFrom,
-    to: to,
-    numberOfPoints: numberOfPoints - totalPoints
-  });
+  if (numberOfPoints - totalPoints > 0) {
+    zones.push({
+      from: currentFrom,
+      to: to,
+      numberOfPoints: numberOfPoints - totalPoints
+    });
+  }
 
   return zones;
 }
