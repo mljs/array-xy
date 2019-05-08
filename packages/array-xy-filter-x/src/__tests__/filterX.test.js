@@ -40,8 +40,8 @@ describe('filterX', () => {
   it('one exclusion', () => {
     let result = filterX(points, { exclusions: [{ from: 2, to: 8 }] });
     expect(result).toStrictEqual({
-      x: [0, 1, 8, 9, 10],
-      y: [1, 2, 9, 10, 11]
+      x: [0, 1, 2, 8, 9, 10],
+      y: [1, 2, 3, 9, 10, 11]
     });
   });
 
@@ -64,8 +64,8 @@ describe('filterX', () => {
       exclusions: [{ from: 2, to: 4.5 }, { from: 5.5, to: 8 }]
     });
     expect(result).toStrictEqual({
-      x: [0, 1, 5, 8, 9, 10],
-      y: [1, 2, 6, 9, 10, 11]
+      x: [0, 1, 2, 5, 8, 9, 10],
+      y: [1, 2, 3, 6, 9, 10, 11]
     });
   });
 });
