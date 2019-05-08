@@ -1,20 +1,47 @@
-export default function getZones(from, to, numberOfPoints, exclusions) {
+export default function getZones(from, to, numberOfPoints, exclusions = []) {
+  if (from > to) {
+    [from, to] = [to, from];
+  }
+
   if (!exclusions || exclusions.length === 0) {
     return [{ from, to, numberOfPoints }];
   }
-  exclusions.forEach((a) => {
-    if (a.from > a.to) {
-      [a.to, a.from] = [a.from, a.to];
+
+  // in exclusions from and to have to be defined
+  exclusions = exclusions.filter(
+    (exclusion) => exclusion.from !== undefined && exclusion.to !== undefined
+  );
+
+  exclusions = JSON.parse(JSON.stringify(exclusions));
+
+  // we ensure that from before to
+  exclusions.forEach((exclusion) => {
+    if (exclusion.from > exclusion.to) {
+      [exclusion.to, exclusion.from] = [exclusion.from, exclusion.to];
     }
   });
 
   exclusions.sort((a, b) => a.from - b.from);
 
-  let total = to - from;
+  // we will rework the exclusions in order to remove overlap and outside range (from / to)
+  exclusions.forEach((exclusion) => {
+    if (exclusion.from < from) exclusion.from = from;
+    if (exclusion.to > to) exclusion.to = to;
+  });
+  for (let i = 0; i < exclusions.length - 1; i++) {
+    if (exclusions[i].to > exclusions[i + 1].from) {
+      exclusions[i].to = exclusions[i + 1].from;
+    }
+  }
+  exclusions = exclusions.filter((exclusion) => exclusion.from < exclusion.to);
+
+  // need to deal with overlapping exclusions and out of bound exclusions
+
   let toRemove = exclusions.reduce(
     (previous, exclusion) => (previous += exclusion.to - exclusion.from),
     0
   );
+  let total = to - from;
   let unitsPerPoint = (total - toRemove) / numberOfPoints;
   let zones = [];
   let currentFrom = from;
@@ -24,11 +51,14 @@ export default function getZones(from, to, numberOfPoints, exclusions) {
       (exclusion.from - currentFrom) / unitsPerPoint
     );
     totalPoints += currentNbPoints;
-    zones.push({
-      from: currentFrom,
-      to: exclusion.from,
-      numberOfPoints: currentNbPoints
-    });
+    if (currentNbPoints > 0) {
+      zones.push({
+        from: currentFrom,
+        to: exclusion.from,
+        numberOfPoints: currentNbPoints
+      });
+    }
+
     currentFrom = exclusion.to;
   }
   zones.push({
@@ -36,5 +66,6 @@ export default function getZones(from, to, numberOfPoints, exclusions) {
     to: to,
     numberOfPoints: numberOfPoints - totalPoints
   });
+
   return zones;
 }

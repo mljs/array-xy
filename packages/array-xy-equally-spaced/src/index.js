@@ -31,11 +31,13 @@ import getZones from './getZones';
  */
 
 export default function equallySpaced(arrayXY = {}, options = {}) {
-  var { x, y } = arrayXY;
-  var xLength = x.length;
+  let { x, y } = arrayXY;
+  let xLength = x.length;
+  let reverse = false;
   if (x.length > 1 && x[0] > x[1]) {
     x = x.slice().reverse();
     y = y.slice().reverse();
+    reverse = true;
   }
 
   let {
@@ -62,15 +64,7 @@ export default function equallySpaced(arrayXY = {}, options = {}) {
     throw new RangeError("'numberOfPoints' option must be a number");
   }
 
-  var reverse = from > to;
-  if (reverse) {
-    [from, to] = [to, from];
-  }
-
-  let zones = getZones(from, to, numberOfPoints, exclusions, reverse);
-  if (reverse) {
-    zones.sort((a, b) => b.from - a.from);
-  }
+  let zones = getZones(from, to, numberOfPoints, exclusions);
 
   let xResult = [];
   let yResult = [];
@@ -87,7 +81,20 @@ export default function equallySpaced(arrayXY = {}, options = {}) {
     xResult.push(...zoneResult.x);
     yResult.push(...zoneResult.y);
   }
-  return { x: xResult, y: yResult };
+
+  if (reverse) {
+    if (from < to) {
+      return { x: xResult.reverse(), y: yResult.reverse() };
+    } else {
+      return { x: xResult, y: yResult };
+    }
+  } else {
+    if (from < to) {
+      return { x: xResult, y: yResult };
+    } else {
+      return { x: xResult.reverse(), y: yResult.reverse() };
+    }
+  }
 }
 
 function processZone(x, y, from, to, numberOfPoints, variant, reverse) {
@@ -102,10 +109,10 @@ function processZone(x, y, from, to, numberOfPoints, variant, reverse) {
 
   return {
     x: sequentialFill({
-      from: reverse ? to : from,
-      to: reverse ? from : to,
+      from,
+      to,
       size: numberOfPoints
     }),
-    y: reverse ? output.reverse() : output
+    y: output
   };
 }

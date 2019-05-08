@@ -69,4 +69,41 @@ describe('getZones', () => {
       }
     ]);
   });
+
+  it('two symmetric exclusion', function () {
+    let zones = getZones(0, 10, 12, [{ from: 2, to: 4 }, { from: 6, to: 8 }]);
+    expect(zones).toEqual([
+      {
+        from: 0,
+        to: 2,
+        numberOfPoints: 4
+      },
+      {
+        from: 4,
+        to: 6,
+        numberOfPoints: 4
+      },
+      {
+        from: 8,
+        to: 10,
+        numberOfPoints: 4
+      }
+    ]);
+  });
+
+  it('two exclusions with one outside range', function () {
+    let zones = getZones(0, 3, 2, [{ from: 1, to: 2 }, { from: 4, to: 5 }]);
+    expect(zones).toEqual([
+      {
+        from: 0,
+        to: 1,
+        numberOfPoints: 1
+      },
+      {
+        from: 2,
+        to: 3,
+        numberOfPoints: 1
+      }
+    ]);
+  });
 });
