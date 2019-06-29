@@ -1,7 +1,8 @@
+import { toBeDeepCloseTo } from 'jest-matcher-deep-close-to';
+
 import weightedMerge from '..';
 
 // eslint-disable-next-line import/no-extraneous-dependencies
-import { toBeDeepCloseTo } from 'jest-matcher-deep-close-to';
 
 expect.extend({ toBeDeepCloseTo });
 

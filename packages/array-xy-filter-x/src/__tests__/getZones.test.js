@@ -63,7 +63,7 @@ describe('getZones', () => {
 
   it('overlaping exclusionsn', function () {
     let zones = getZones(0, 10, [{ from: 2, to: 4 }, { from: 2, to: 8 }]);
-    expect(zones).toEqual([
+    expect(zones).toStrictEqual([
       {
         from: 0,
         to: 2
@@ -77,7 +77,7 @@ describe('getZones', () => {
 
   it('outside range exclusion', function () {
     let zones = getZones(0, 10, [{ from: -2, to: -4 }, { from: 12, to: 14 }]);
-    expect(zones).toEqual([
+    expect(zones).toStrictEqual([
       {
         from: 0,
         to: 10
@@ -87,7 +87,7 @@ describe('getZones', () => {
 
   it('partial outside range exclusion', function () {
     let zones = getZones(0, 10, [{ from: -2, to: 2 }, { from: 8, to: 12 }]);
-    expect(zones).toEqual([
+    expect(zones).toStrictEqual([
       {
         from: 2,
         to: 8
@@ -97,7 +97,7 @@ describe('getZones', () => {
 
   it('two exclusions with one outside range', function () {
     let zones = getZones(0, 3, [{ from: 1, to: 2 }, { from: 4, to: 5 }]);
-    expect(zones).toEqual([
+    expect(zones).toStrictEqual([
       {
         from: 0,
         to: 1

@@ -1,5 +1,5 @@
 import binarySearch from 'binary-search';
-import { asc, desc } from 'num-sort';
+import { ascending, descending } from 'num-sort';
 
 /**
  *
@@ -15,9 +15,9 @@ export default function closestX(points, options) {
 
   let index;
   if (reverse) {
-    index = binarySearch(x, target, desc);
+    index = binarySearch(x, target, descending);
   } else {
-    index = binarySearch(x, target, asc);
+    index = binarySearch(x, target, ascending);
   }
 
   if (index >= 0) {

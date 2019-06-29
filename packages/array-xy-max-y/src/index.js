@@ -1,5 +1,5 @@
 import binarySearch from 'binary-search';
-import { asc, desc } from 'num-sort';
+import { ascending, descending } from 'num-sort';
 
 /**
  * @param {object} points
@@ -51,9 +51,9 @@ export default function maxY(points, options = {}) {
 function calculateIndex(value, x, reverse) {
   let index;
   if (reverse) {
-    index = binarySearch(x, value, desc);
+    index = binarySearch(x, value, descending);
   } else {
-    index = binarySearch(x, value, asc);
+    index = binarySearch(x, value, ascending);
   }
 
   if (index < 0) {
