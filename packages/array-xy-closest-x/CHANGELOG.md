@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0](https://github.com/mljs/array-xy/compare/ml-arrayxy-closestx@1.2.4...ml-arrayxy-closestx@2.0.0) (2019-06-29)
+
+
+### chore
+
+* update dependencies and remove support  for Node.js 6 ([dc23f9c](https://github.com/mljs/array-xy/commit/dc23f9c))
+
+
+### BREAKING CHANGES
+
+* Node.js 6 is no longer supported
+
+
+
+
+
 ## [1.2.4](https://github.com/mljs/array-xy/compare/ml-arrayxy-closestx@1.2.3...ml-arrayxy-closestx@1.2.4) (2019-05-03)
 
 **Note:** Version bump only for package ml-arrayxy-closestx
