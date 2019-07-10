@@ -1,0 +1,30 @@
+{
+  "name": "ml-array-xy-integrate",
+  "version": "1.0.0",
+  "description": "Integrates y values. The x array has to be ordered and increasing.",
+  "main": "lib/index.js",
+  "module": "src/index.js",
+  "files": [
+    "lib",
+    "src"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mljs/array-xy.git"
+  },
+  "keywords": [
+    "machine",
+    "learning",
+    "data",
+    "mining",
+    "datamining"
+  ],
+  "author": "lpatiny",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mljs/array-xy/issues"
+  },
+  "homepage": "https://github.com/mljs/array-sy/#readme",
+  "gitHead": "1321c2b63d8d201d6242bdcbfdb7b7bdfc0e719a",
+  "dependencies": {}
+}
