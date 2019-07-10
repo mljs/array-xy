@@ -60,3 +60,5 @@ typings/
 .idea
 /packages/*/lib/
 /dist/
+
+package-lock.json
