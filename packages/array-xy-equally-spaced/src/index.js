@@ -34,6 +34,7 @@ export default function equallySpaced(arrayXY = {}, options = {}) {
   let { x, y } = arrayXY;
   let xLength = x.length;
   let reverse = false;
+
   if (x.length > 1 && x[0] > x[1]) {
     x = x.slice().reverse();
     y = y.slice().reverse();
@@ -62,6 +63,10 @@ export default function equallySpaced(arrayXY = {}, options = {}) {
 
   if (typeof numberOfPoints !== 'number' || isNaN(numberOfPoints)) {
     throw new RangeError("'numberOfPoints' option must be a number");
+  }
+
+  if (numberOfPoints < 2) {
+    throw new RangeError("'numberOfPoints' option must be greater than 1");
   }
 
   let zones = getZones(from, to, numberOfPoints, exclusions);
