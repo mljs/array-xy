@@ -1,6 +1,18 @@
 import equallySpaced from '..';
 
 describe('equallySpaced', () => {
+  it('testing 1 points', function () {
+    var x = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    var y = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+    expect(() => equallySpaced(
+      { x, y },
+      {
+        numberOfPoints: 1
+      }
+    )).toThrow('greater than 1');
+  });
+  
   it('equallySpaced smooth', function () {
     var x = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     var y = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];

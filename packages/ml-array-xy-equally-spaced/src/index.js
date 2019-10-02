@@ -64,6 +64,10 @@ export default function equallySpaced(arrayXY = {}, options = {}) {
     throw new RangeError("'numberOfPoints' option must be a number");
   }
 
+  if (numberOfPoints < 2) {
+    throw new RangeError("'numberOfPoints' option must be greater than 1");
+  }
+
   let zones = getZones(from, to, numberOfPoints, exclusions);
 
   let xResult = [];
