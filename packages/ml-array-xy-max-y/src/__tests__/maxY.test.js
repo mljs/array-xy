@@ -1,6 +1,6 @@
 import maxY from '..';
 
-describe('test maxY', () => {
+describe('maxY', () => {
   it('default values', () => {
     const points = {
       x: [1, 2, 3],

@@ -1,7 +1,7 @@
 import integrate from '..';
 
-describe('uniqueX', function () {
-  it('should yield the right array 1', function () {
+describe('integrate', function () {
+  it('should yield the right result', function () {
     var x = [0, 1, 2, 3];
     var y = [1, 1, 1, 1];
     integrate({ x, y });

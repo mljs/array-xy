@@ -3,7 +3,7 @@ import sortX from '..';
 const x = [-1, 0, 1, 2, 3, 4, 5, 6];
 const y = [10, 11, 12, 13, 14, 15, 16, 17];
 
-describe('sort an array', () => {
+describe('sortX', () => {
   it('already sorted array', () => {
     expect(sortX({ x, y })).toStrictEqual({ x, y });
   });

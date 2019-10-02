@@ -1,4 +1,4 @@
-import closestX from 'ml-array-xy-closest-x';
+import closestX from 'ml-arrayxy-closest-x';
 
 /**
  * In place modification of the 2 arrays to make X unique and sum the Y if X has the same value
