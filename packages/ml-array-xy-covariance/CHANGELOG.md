@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0 (2019-10-02)
+
+
+### Features
+
+* add covariance ([2fd5788](https://github.com/mljs/array-xy/commit/2fd5788))
+
+
+
+
+
 # [2.0.0](https://github.com/mljs/array-xy/compare/ml-arrayxy-covariance@1.2.4...ml-arrayxy-covariance@2.0.0) (2019-06-29)
 
 
