@@ -1,4 +1,4 @@
-import closestX from 'ml-arrayxy-closest-x';
+import closestX from 'ml-arrayxy-closestx';
 
 /**
  * In place modification of the 2 arrays to make X unique and sum the Y if X has the same value
@@ -14,7 +14,7 @@ import closestX from 'ml-arrayxy-closest-x';
 
 export default function integrate(points = {}, options = {}) {
   const { x, y } = points;
-  if (x.length < 2) return;
+  if (x.length < 2) return { integration: 0 };
   if (x.length !== y.length) {
     throw new Error('The X and Y arrays mush have the same length');
   }
@@ -25,14 +25,14 @@ export default function integrate(points = {}, options = {}) {
     if (from !== undefined) {
       fromIndex = closestX({ x, y }, { target: from });
     } else {
-      fromIndex = x.length - 1;
+      fromIndex = 0;
     }
   }
   if (toIndex === undefined) {
     if (to !== undefined) {
       toIndex = closestX({ x, y }, { target: to });
     } else {
-      toIndex = 0;
+      toIndex = x.length - 1;
     }
   }
 
