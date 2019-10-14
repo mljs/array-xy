@@ -82,8 +82,8 @@ export default function equallySpaced(arrayXY = {}, options = {}) {
       variant,
       reverse
     );
-    xResult.push(...zoneResult.x);
-    yResult.push(...zoneResult.y);
+    xResult = xResult.concat(zoneResult.x);
+    yResult = yResult.concat(zoneResult.y);
   }
 
   if (reverse) {
