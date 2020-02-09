@@ -11,10 +11,10 @@ export default function weightedMerge(points, options = {}) {
   const { x, y } = points;
   const { groupWidth = 0.001 } = options;
 
-  var merged = { x: [], y: [] };
-  var weightedAbscissa = { x: [], y: [] };
-  var size = 0;
-  var index = 0;
+  let merged = { x: [], y: [] };
+  let weightedAbscissa = { x: [], y: [] };
+  let size = 0;
+  let index = 0;
 
   while (index < x.length) {
     if (size === 0 || x[index] - merged.x[size - 1] > groupWidth) {
@@ -33,7 +33,7 @@ export default function weightedMerge(points, options = {}) {
     }
   }
 
-  for (var i = 0; i < merged.x.length; i++) {
+  for (let i = 0; i < merged.x.length; i++) {
     merged.x[i] = weightedAbscissa.x[i] / weightedAbscissa.y[i];
   }
 

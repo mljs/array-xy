@@ -16,7 +16,7 @@ export default function covariance(points, options = {}) {
   const meanX = mean(x);
   const meanY = mean(y);
 
-  var error = 0;
+  let error = 0;
 
   for (let i = 0; i < x.length; i++) {
     error += (x[i] - meanX) * (y[i] - meanY);

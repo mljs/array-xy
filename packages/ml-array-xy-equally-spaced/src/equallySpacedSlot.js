@@ -9,33 +9,33 @@
  * @return {Array} - Array of y's equally spaced with the variant "slot"
  */
 export default function equallySpacedSlot(x, y, from, to, numberOfPoints) {
-  var xLength = x.length;
+  let xLength = x.length;
 
-  var step = (to - from) / (numberOfPoints - 1);
-  var halfStep = step / 2;
-  var lastStep = x[x.length - 1] - x[x.length - 2];
+  let step = (to - from) / (numberOfPoints - 1);
+  let halfStep = step / 2;
+  let lastStep = x[x.length - 1] - x[x.length - 2];
 
-  var start = from - halfStep;
-  var output = new Array(numberOfPoints);
+  let start = from - halfStep;
+  let output = new Array(numberOfPoints);
 
   // Init main variables
-  var min = start;
-  var max = start + step;
+  let min = start;
+  let max = start + step;
 
-  var previousX = -Number.MAX_VALUE;
-  var previousY = 0;
-  var nextX = x[0];
-  var nextY = y[0];
-  var frontOutsideSpectra = 0;
-  var backOutsideSpectra = true;
+  let previousX = -Number.MAX_VALUE;
+  let previousY = 0;
+  let nextX = x[0];
+  let nextY = y[0];
+  let frontOutsideSpectra = 0;
+  let backOutsideSpectra = true;
 
-  var currentValue = 0;
+  let currentValue = 0;
 
   // for slot algorithm
-  var currentPoints = 0;
+  let currentPoints = 0;
 
-  var i = 1; // index of input
-  var j = 0; // index of output
+  let i = 1; // index of input
+  let j = 0; // index of output
 
   main: while (true) {
     if (previousX >= nextX) throw new Error('x must be an increasing serie');

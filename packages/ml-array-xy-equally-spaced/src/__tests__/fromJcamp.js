@@ -1,40 +1,40 @@
 import equallySpaced from '..';
 
-describe('on jcamp data', function () {
-  var data = require('./data/jcamp.json');
+describe('on jcamp data', function() {
+  let data = require('./data/jcamp.json');
 
-  it('inbound', function () {
-    var ans = equallySpaced(data, {
+  it('inbound', function() {
+    let ans = equallySpaced(data, {
       from: 100,
       to: 1500,
-      numberOfPoints: 1000
+      numberOfPoints: 1000,
     });
     ans.y.map((y) => expect(y).not.toBe(NaN));
   });
 
-  it('out of bounds start', function () {
-    var ans = equallySpaced(data, {
+  it('out of bounds start', function() {
+    let ans = equallySpaced(data, {
       from: 0,
       to: 1500,
-      numberOfPoints: 1000
+      numberOfPoints: 1000,
     });
     ans.y.map((y) => expect(y).not.toBe(NaN));
   });
 
-  it('out of bounds end', function () {
-    var ans = equallySpaced(data, {
+  it('out of bounds end', function() {
+    let ans = equallySpaced(data, {
       from: 1000,
       to: 4500,
-      numberOfPoints: 1000
+      numberOfPoints: 1000,
     });
     ans.y.map((y) => expect(y).not.toBe(NaN));
   });
 
-  it('completely out of bounds', function () {
-    var ans = equallySpaced(data, {
+  it('completely out of bounds', function() {
+    let ans = equallySpaced(data, {
       from: 3000,
       to: 4500,
-      numberOfPoints: 1000
+      numberOfPoints: 1000,
     });
     ans.y.map((y) => expect(y).toBe(0));
   });
@@ -51,7 +51,7 @@ describe('on jcamp data', function () {
       from: 0,
       to: 200,
       numberOfPoints: 7 * 1024,
-      variant: 'smooth'
+      variant: 'smooth',
     });
 
     expect(data.y[index0] * 1.1 <= ans.y[0]).toBe(true);

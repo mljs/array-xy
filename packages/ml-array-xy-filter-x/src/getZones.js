@@ -5,7 +5,7 @@ export default function getZones(from, to, exclusions = []) {
 
   // in exclusions from and to have to be defined
   exclusions = exclusions.filter(
-    (exclusion) => exclusion.from !== undefined && exclusion.to !== undefined
+    (exclusion) => exclusion.from !== undefined && exclusion.to !== undefined,
   );
 
   exclusions = JSON.parse(JSON.stringify(exclusions));
@@ -40,7 +40,7 @@ export default function getZones(from, to, exclusions = []) {
     if (currentFrom < exclusion.from) {
       zones.push({
         from: currentFrom,
-        to: exclusion.from
+        to: exclusion.from,
       });
     }
 
@@ -49,7 +49,7 @@ export default function getZones(from, to, exclusions = []) {
   if (currentFrom < to) {
     zones.push({
       from: currentFrom,
-      to: to
+      to: to,
     });
   }
 

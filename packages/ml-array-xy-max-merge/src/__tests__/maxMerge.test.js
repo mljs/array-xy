@@ -8,7 +8,7 @@ expect.extend({ toBeDeepCloseTo });
 
 const points = {
   x: [100.001, 100.002, 200.01, 200.02, 300.0001, 300.0002],
-  y: [10, 11, 20, 21, 32, 31]
+  y: [10, 11, 20, 21, 32, 31],
 };
 describe('maxMerge', () => {
   it('default value', () => {

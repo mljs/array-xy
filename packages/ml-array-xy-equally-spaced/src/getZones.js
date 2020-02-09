@@ -5,7 +5,7 @@ export default function getZones(from, to, numberOfPoints, exclusions = []) {
 
   // in exclusions from and to have to be defined
   exclusions = exclusions.filter(
-    (exclusion) => exclusion.from !== undefined && exclusion.to !== undefined
+    (exclusion) => exclusion.from !== undefined && exclusion.to !== undefined,
   );
 
   exclusions = JSON.parse(JSON.stringify(exclusions));
@@ -38,7 +38,7 @@ export default function getZones(from, to, numberOfPoints, exclusions = []) {
 
   let toRemove = exclusions.reduce(
     (previous, exclusion) => (previous += exclusion.to - exclusion.from),
-    0
+    0,
   );
   let total = to - from;
   let unitsPerPoint = (total - toRemove) / numberOfPoints;
@@ -47,14 +47,14 @@ export default function getZones(from, to, numberOfPoints, exclusions = []) {
   let totalPoints = 0;
   for (let exclusion of exclusions) {
     let currentNbPoints = Math.round(
-      (exclusion.from - currentFrom) / unitsPerPoint
+      (exclusion.from - currentFrom) / unitsPerPoint,
     );
     totalPoints += currentNbPoints;
     if (currentNbPoints > 0) {
       zones.push({
         from: currentFrom,
         to: exclusion.from,
-        numberOfPoints: currentNbPoints
+        numberOfPoints: currentNbPoints,
       });
     }
 
@@ -64,7 +64,7 @@ export default function getZones(from, to, numberOfPoints, exclusions = []) {
     zones.push({
       from: currentFrom,
       to: to,
-      numberOfPoints: numberOfPoints - totalPoints
+      numberOfPoints: numberOfPoints - totalPoints,
     });
   }
 

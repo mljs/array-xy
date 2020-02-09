@@ -1,8 +1,8 @@
 import sequentialFill from 'ml-array-sequential-fill';
+import { zonesWithPoints, invert } from 'ml-zones';
 
 import equallySpacedSmooth from './equallySpacedSmooth';
 import equallySpacedSlot from './equallySpacedSlot';
-import getZones from './getZones';
 
 /**
  * Function that returns a Number array of equally spaced numberOfPoints
@@ -45,7 +45,7 @@ export default function equallySpaced(arrayXY = {}, options = {}) {
     to = x[xLength - 1],
     variant = 'smooth',
     numberOfPoints = 100,
-    exclusions = []
+    exclusions = [],
   } = options;
 
   if (xLength !== y.length) {
@@ -68,7 +68,9 @@ export default function equallySpaced(arrayXY = {}, options = {}) {
     throw new RangeError("'numberOfPoints' option must be greater than 1");
   }
 
-  let zones = getZones(from, to, numberOfPoints, exclusions);
+  let zones = invert(exclusions, { from, to });
+  console.log({ zones });
+  zones = zonesWithPoints(zones, numberOfPoints, { from, to });
 
   let xResult = [];
   let yResult = [];
@@ -80,7 +82,7 @@ export default function equallySpaced(arrayXY = {}, options = {}) {
       zone.to,
       zone.numberOfPoints,
       variant,
-      reverse
+      reverse,
     );
     xResult = xResult.concat(zoneResult.x);
     yResult = yResult.concat(zoneResult.y);
@@ -106,7 +108,7 @@ function processZone(x, y, from, to, numberOfPoints, variant) {
     throw new RangeError('the number of points must be at least 1');
   }
 
-  var output =
+  let output =
     variant === 'slot'
       ? equallySpacedSlot(x, y, from, to, numberOfPoints)
       : equallySpacedSmooth(x, y, from, to, numberOfPoints);
@@ -115,8 +117,8 @@ function processZone(x, y, from, to, numberOfPoints, variant) {
     x: sequentialFill({
       from,
       to,
-      size: numberOfPoints
+      size: numberOfPoints,
     }),
-    y: output
+    y: output,
   };
 }

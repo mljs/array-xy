@@ -16,7 +16,7 @@ export default function maxY(points, options = {}) {
   let {
     from = { index: 0 },
     to = { index: x.length },
-    reverse = false
+    reverse = false,
   } = options;
 
   if (from.value !== undefined && from.index === undefined) {
@@ -27,9 +27,9 @@ export default function maxY(points, options = {}) {
     to.index = calculateIndex(to.value, x, reverse);
   }
 
-  var currentMax = Number.MIN_VALUE;
-  var currentIndex;
-  for (var i = from.index; i < to.index; i++) {
+  let currentMax = Number.MIN_VALUE;
+  let currentIndex;
+  for (let i = from.index; i < to.index; i++) {
     if (currentMax < y[i]) {
       currentMax = y[i];
       currentIndex = i;
@@ -38,7 +38,7 @@ export default function maxY(points, options = {}) {
 
   return {
     index: currentIndex,
-    value: currentMax
+    value: currentMax,
   };
 }
 

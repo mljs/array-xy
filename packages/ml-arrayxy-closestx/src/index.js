@@ -23,7 +23,7 @@ export default function closestX(points, options) {
   if (index >= 0) {
     return {
       x: x[index],
-      y: y[index]
+      y: y[index],
     };
   } else {
     index = ~index;
@@ -33,12 +33,12 @@ export default function closestX(points, options) {
     ) {
       return {
         x: x[index - 1],
-        y: y[index - 1]
+        y: y[index - 1],
       };
     } else {
       return {
         x: x[index],
-        y: y[index]
+        y: y[index],
       };
     }
   }

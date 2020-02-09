@@ -11,10 +11,10 @@ export default function maxMerge(points, options = {}) {
   const { x, y } = points;
   const { groupWidth = 0.001 } = options;
 
-  var merged = { x: [], y: [] };
-  var maxAbscissa = { x: [], y: [] };
-  var size = 0;
-  var index = 0;
+  let merged = { x: [], y: [] };
+  let maxAbscissa = { x: [], y: [] };
+  let size = 0;
+  let index = 0;
 
   while (index < x.length) {
     if (size === 0 || x[index] - merged.x[size - 1] > groupWidth) {

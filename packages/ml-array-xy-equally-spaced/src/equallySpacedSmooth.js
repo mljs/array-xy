@@ -11,38 +11,39 @@ import integral from './integral';
  * @return {Array} - Array of y's equally spaced with the variant "smooth"
  */
 export default function equallySpacedSmooth(x, y, from, to, numberOfPoints) {
-  var xLength = x.length;
+  let xLength = x.length;
 
-  var step = (to - from) / (numberOfPoints - 1);
-  var halfStep = step / 2;
+  let step = (to - from) / (numberOfPoints - 1);
+  let halfStep = step / 2;
 
-  var output = new Array(numberOfPoints);
+  let output = new Array(numberOfPoints);
 
-  var initialOriginalStep = x[1] - x[0];
-  var lastOriginalStep = x[xLength - 1] - x[xLength - 2];
+  let initialOriginalStep = x[1] - x[0];
+  let lastOriginalStep = x[xLength - 1] - x[xLength - 2];
 
   // Init main variables
-  var min = from - halfStep;
-  var max = from + halfStep;
+  let min = from - halfStep;
+  let max = from + halfStep;
 
-  var previousX = Number.MIN_VALUE;
-  var previousY = 0;
-  var nextX = x[0] - initialOriginalStep;
-  var nextY = 0;
+  let previousX = Number.MIN_VALUE;
+  let previousY = 0;
+  let nextX = x[0] - initialOriginalStep;
+  let nextY = 0;
 
-  var currentValue = 0;
-  var slope = 0;
-  var intercept = 0;
-  var sumAtMin = 0;
-  var sumAtMax = 0;
+  let currentValue = 0;
+  let slope = 0;
+  let intercept = 0;
+  let sumAtMin = 0;
+  let sumAtMax = 0;
 
-  var i = 0; // index of input
-  var j = 0; // index of output
+  let i = 0; // index of input
+  let j = 0; // index of output
 
   function getSlope(x0, y0, x1, y1) {
     return (y1 - y0) / (x1 - x0);
   }
 
+  let add = 0;
   main: while (true) {
     if (previousX <= min && min <= nextX) {
       add = integral(0, min - previousX, slope, previousY);
@@ -51,7 +52,7 @@ export default function equallySpacedSmooth(x, y, from, to, numberOfPoints) {
 
     while (nextX - max >= 0) {
       // no overlap with original point, just consume current value
-      var add = integral(0, max - previousX, slope, previousY);
+      add = integral(0, max - previousX, slope, previousY);
       sumAtMax = currentValue + add;
 
       output[j++] = (sumAtMax - sumAtMin) / step;

@@ -11,22 +11,22 @@
 export default function mergeByCentroids(
   originalPoints,
   centroids,
-  options = {}
+  options = {},
 ) {
   const { window = 0.01 } = options;
 
-  var mergedPoints = {
+  let mergedPoints = {
     x: centroids.slice(),
-    y: new Array(centroids.length).fill(0)
+    y: new Array(centroids.length).fill(0),
   };
 
-  var originalIndex = 0;
-  var mergedIndex = 0;
+  let originalIndex = 0;
+  let mergedIndex = 0;
   while (
     originalIndex < originalPoints.x.length &&
     mergedIndex < centroids.length
   ) {
-    var diff = originalPoints.x[originalIndex] - centroids[mergedIndex];
+    let diff = originalPoints.x[originalIndex] - centroids[mergedIndex];
     if (Math.abs(diff) < window) {
       mergedPoints.y[mergedIndex] += originalPoints.y[originalIndex++];
     } else if (diff < 0) {

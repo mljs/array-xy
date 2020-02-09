@@ -18,7 +18,6 @@ export default function filterX(points, options = {}) {
 
   let zones = getZones(from, to, exclusions);
 
-
   let currentZoneIndex = 0;
   let newX = [];
   let newY = [];
@@ -41,6 +40,6 @@ export default function filterX(points, options = {}) {
 
   return {
     x: newX,
-    y: newY
+    y: newY,
   };
 }

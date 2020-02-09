@@ -1,4 +1,3 @@
-
 /**
  * In place modification of the 2 arrays to make X unique and sum the Y if X has the same value
  * @param {object} [points={}] : Object of points contains property x (an array) and y (an array)
