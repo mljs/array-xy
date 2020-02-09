@@ -36,8 +36,5 @@
   },
   "jest": {
     "testEnvironment": "node"
-  },
-  "dependencies": {
-    "ml-zones": "0.1.0"
   }
 }
