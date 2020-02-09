@@ -69,7 +69,6 @@ export default function equallySpaced(arrayXY = {}, options = {}) {
   }
 
   let zones = invert(exclusions, { from, to });
-  console.log({ zones });
   zones = zonesWithPoints(zones, numberOfPoints, { from, to });
 
   let xResult = [];
