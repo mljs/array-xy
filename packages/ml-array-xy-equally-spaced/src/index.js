@@ -27,6 +27,7 @@ import equallySpacedSlot from './equallySpacedSlot';
  * @param {string} [options.variant='smooth']
  * @param {number} [options.numberOfPoints=100]
  * @param {Array} [options.exclusions=[]] array of from / to that should be skipped for the generation of the points
+ * @param {Array} [options.zones=[]] array of from / to that should be kept
  * @return {object<x: Array, y:Array>} new object with x / y array with the equally spaced data.
  */
 
@@ -46,6 +47,7 @@ export default function equallySpaced(arrayXY = {}, options = {}) {
     variant = 'smooth',
     numberOfPoints = 100,
     exclusions = [],
+    zones = [],
   } = options;
 
   if (xLength !== y.length) {
@@ -68,8 +70,9 @@ export default function equallySpaced(arrayXY = {}, options = {}) {
     throw new RangeError("'numberOfPoints' option must be greater than 1");
   }
 
-  let zones = invert(exclusions, { from, to });
-  zones = zonesWithPoints(zones, numberOfPoints, { from, to });
+  let invertedExclusions = invert(exclusions, { from, to });
+  invertedExclusions.push(...zones);
+  zones = zonesWithPoints(invertedExclusions, numberOfPoints, { from, to });
 
   let xResult = [];
   let yResult = [];
