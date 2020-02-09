@@ -231,4 +231,48 @@ describe('equallySpaced', () => {
       y: [8, 7, 2, 1],
     });
   });
+
+  it('testing zones', function() {
+    let x = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    let y = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+    let ans = equallySpaced(
+      { x, y },
+      {
+        from: 1,
+        to: 8,
+        numberOfPoints: 4,
+        variant: 'smooth',
+        zones: [
+          { from: 0, to: 3 },
+          { from: 5, to: 7 },
+        ],
+      },
+    );
+
+    expect(ans).toStrictEqual({
+      x: [1, 3, 5, 7],
+      y: [1, 3, 5, 7],
+    });
+  });
+
+  it('testing one zones', function() {
+    let x = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    let y = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+    let ans = equallySpaced(
+      { x, y },
+      {
+        from: 1,
+        to: 8,
+        numberOfPoints: 4,
+        variant: 'smooth',
+        zones: [{ from: -5, to: 4 }],
+      },
+    );
+    expect(ans).toStrictEqual({
+      x: [1, 2, 3, 4],
+      y: [1, 2, 3, 4],
+    });
+  });
 });

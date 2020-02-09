@@ -20,6 +20,7 @@ import equallySpacedSlot from './equallySpacedSlot';
  * value. The smooth variant is the same but takes the integral of the range
  * of the slot and divide by the step size between two points in the new array.
  *
+ * If exclusions zone are present, zones are ignored !
  * @param {object} [arrayXY={}] - object containing 2 properties x and y (both an array)
  * @param {object} [options={}]
  * @param {number} [options.from=x[0]]
@@ -70,9 +71,11 @@ export default function equallySpaced(arrayXY = {}, options = {}) {
     throw new RangeError("'numberOfPoints' option must be greater than 1");
   }
 
-  let invertedExclusions = invert(exclusions, { from, to });
-  invertedExclusions.push(...zones);
-  zones = zonesWithPoints(invertedExclusions, numberOfPoints, { from, to });
+  if (zones.length === 0) {
+    zones = invert(exclusions, { from, to });
+  }
+
+  zones = zonesWithPoints(zones, numberOfPoints, { from, to });
 
   let xResult = [];
   let yResult = [];
@@ -86,10 +89,10 @@ export default function equallySpaced(arrayXY = {}, options = {}) {
       variant,
       reverse,
     );
+
     xResult = xResult.concat(zoneResult.x);
     yResult = yResult.concat(zoneResult.y);
   }
-
   if (reverse) {
     if (from < to) {
       return { x: xResult.reverse(), y: yResult.reverse() };
