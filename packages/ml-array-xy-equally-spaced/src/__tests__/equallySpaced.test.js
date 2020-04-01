@@ -1,7 +1,7 @@
 import equallySpaced from '..';
 
 describe('equallySpaced', () => {
-  it('testing 1 points', function() {
+  it('testing 1 points', function () {
     let x = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     let y = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
@@ -15,7 +15,7 @@ describe('equallySpaced', () => {
     ).toThrow('greater than 1');
   });
 
-  it('equallySpaced smooth', function() {
+  it('equallySpaced smooth', function () {
     let x = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     let y = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
@@ -62,7 +62,7 @@ describe('equallySpaced', () => {
     });
   });
 
-  it('equallySpaced slot', function() {
+  it('equallySpaced slot', function () {
     let x = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     let y = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
@@ -170,7 +170,7 @@ describe('equallySpaced', () => {
     });
   });
 
-  it('changing from and to', function() {
+  it('changing from and to', function () {
     let x = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     let y = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
@@ -190,7 +190,7 @@ describe('equallySpaced', () => {
     });
   });
 
-  it('testing exclusions', function() {
+  it('testing exclusions', function () {
     let x = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     let y = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
@@ -211,7 +211,7 @@ describe('equallySpaced', () => {
     });
   });
 
-  it('testing inverted exclusions', function() {
+  it('testing inverted exclusions', function () {
     let x = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     let y = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
@@ -232,7 +232,7 @@ describe('equallySpaced', () => {
     });
   });
 
-  it('testing zones', function() {
+  it('testing zones', function () {
     let x = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     let y = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
@@ -256,7 +256,7 @@ describe('equallySpaced', () => {
     });
   });
 
-  it('testing one zones', function() {
+  it('testing one zones', function () {
     let x = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     let y = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 

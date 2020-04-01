@@ -1,9 +1,9 @@
 import equallySpaced from '..';
 
-describe('on jcamp data', function() {
+describe('on jcamp data', function () {
   let data = require('./data/jcamp.json');
 
-  it('inbound', function() {
+  it('inbound', function () {
     let ans = equallySpaced(data, {
       from: 100,
       to: 1500,
@@ -12,7 +12,7 @@ describe('on jcamp data', function() {
     ans.y.map((y) => expect(y).not.toBe(NaN));
   });
 
-  it('out of bounds start', function() {
+  it('out of bounds start', function () {
     let ans = equallySpaced(data, {
       from: 0,
       to: 1500,
@@ -21,7 +21,7 @@ describe('on jcamp data', function() {
     ans.y.map((y) => expect(y).not.toBe(NaN));
   });
 
-  it('out of bounds end', function() {
+  it('out of bounds end', function () {
     let ans = equallySpaced(data, {
       from: 1000,
       to: 4500,
@@ -30,7 +30,7 @@ describe('on jcamp data', function() {
     ans.y.map((y) => expect(y).not.toBe(NaN));
   });
 
-  it('completely out of bounds', function() {
+  it('completely out of bounds', function () {
     let ans = equallySpaced(data, {
       from: 3000,
       to: 4500,

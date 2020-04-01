@@ -1,8 +1,8 @@
 import sequentialFill from 'ml-array-sequential-fill';
 import { zonesWithPoints, invert } from 'ml-zones';
 
-import equallySpacedSmooth from './equallySpacedSmooth';
 import equallySpacedSlot from './equallySpacedSlot';
+import equallySpacedSmooth from './equallySpacedSmooth';
 
 /**
  * Function that returns a Number array of equally spaced numberOfPoints
