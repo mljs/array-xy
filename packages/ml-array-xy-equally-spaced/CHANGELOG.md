@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.2.0](https://github.com/mljs/array-xy/compare/ml-array-xy-equally-spaced@1.0.1...ml-array-xy-equally-spaced@1.2.0) (2021-03-04)
+
+
+### Bug Fixes
+
+* infinite loop for small slots ([108076a](https://github.com/mljs/array-xy/commit/108076a3f13205229691a5059687cd07c79b59b1))
+* wrong package dependency ml-zones ([1cbe592](https://github.com/mljs/array-xy/commit/1cbe5920f80bba0fff3cf7fa407ce2672965b417))
+
+
+### Features
+
+* **equallySpaced:** allows to specify zones to keep ([e87bac8](https://github.com/mljs/array-xy/commit/e87bac8b8842276429d52534dcd17cd8dd64301c))
+* equally-space allows now large array ([da32706](https://github.com/mljs/array-xy/commit/da32706e659977614320a77cab40f6f100a478b5))
+
+
+
+
+
 ## [1.0.1](https://github.com/mljs/array-xy/compare/ml-array-xy-equally-spaced@1.0.0...ml-array-xy-equally-spaced@1.0.1) (2019-10-02)
 
 **Note:** Version bump only for package ml-array-xy-equally-spaced

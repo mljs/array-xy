@@ -1,6 +1,6 @@
 {
   "name": "ml-array-xy-filter-x",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Filter a XY array based on x values",
   "main": "lib/index.js",
   "module": "src/index.js",

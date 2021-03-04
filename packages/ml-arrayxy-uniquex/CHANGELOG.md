@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.2](https://github.com/mljs/array-xy/compare/ml-arrayxy-uniquex@1.0.1...ml-arrayxy-uniquex@1.0.2) (2021-03-04)
+
+**Note:** Version bump only for package ml-arrayxy-uniquex
+
+
+
+
+
 ## [1.0.1](https://github.com/mljs/array-xy/compare/ml-arrayxy-uniquex@1.0.0...ml-arrayxy-uniquex@1.0.1) (2019-10-02)
 
 **Note:** Version bump only for package ml-arrayxy-uniquex
