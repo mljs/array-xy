@@ -13,7 +13,7 @@ import integral from './integral';
 export default function equallySpacedSmooth(x, y, from, to, numberOfPoints) {
   let xLength = x.length;
 
-  let step = (to - from) / (numberOfPoints - 1);
+  let step = (to - from) / (numberOfPoints > 1 ? numberOfPoints - 1 : 1);
   let halfStep = step / 2;
 
   let output = new Array(numberOfPoints);

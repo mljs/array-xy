@@ -11,7 +11,7 @@
 export default function equallySpacedSlot(x, y, from, to, numberOfPoints) {
   let xLength = x.length;
 
-  let step = (to - from) / (numberOfPoints - 1);
+  let step = (to - from) / (numberOfPoints > 1 ? numberOfPoints - 1 : 1);
   let halfStep = step / 2;
   let lastStep = x[x.length - 1] - x[x.length - 2];
 
