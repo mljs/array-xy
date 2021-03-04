@@ -14,16 +14,15 @@ export default function equallySpacedSmooth(x, y, from, to, numberOfPoints) {
   let xLength = x.length;
 
   let step = (to - from) / (numberOfPoints - 1);
-  let halfStep = step / 2;
 
-  let output = new Array(numberOfPoints);
+  let output = [];
 
   let initialOriginalStep = x[1] - x[0];
   let lastOriginalStep = x[xLength - 1] - x[xLength - 2];
 
   // Init main variables
-  let min = from - halfStep;
-  let max = from + halfStep;
+  let min = from - step / 2;
+  let max = from + step / 2;
 
   let previousX = Number.MIN_VALUE;
   let previousY = 0;
@@ -37,7 +36,6 @@ export default function equallySpacedSmooth(x, y, from, to, numberOfPoints) {
   let sumAtMax = 0;
 
   let i = 0; // index of input
-  let j = 0; // index of output
 
   function getSlope(x0, y0, x1, y1) {
     return (y1 - y0) / (x1 - x0);
@@ -55,9 +53,9 @@ export default function equallySpacedSmooth(x, y, from, to, numberOfPoints) {
       add = integral(0, max - previousX, slope, previousY);
       sumAtMax = currentValue + add;
 
-      output[j++] = (sumAtMax - sumAtMin) / step;
+      output.push((sumAtMax - sumAtMin) / step);
 
-      if (j === numberOfPoints) {
+      if (output.length === numberOfPoints) {
         break main;
       }
 

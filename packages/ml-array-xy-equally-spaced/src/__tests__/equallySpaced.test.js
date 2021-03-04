@@ -62,6 +62,28 @@ describe('equallySpaced', () => {
     });
   });
 
+
+
+  it.only('equallySpaced smooth edge to edge', function () {
+    let x = [0, 5, 10];
+    let y = [100, 105, 110];
+
+    let ans = equallySpaced(
+      { x, y },
+      {
+        from: 0,
+        to: 10,
+        numberOfPoints: 3,
+      },
+    );
+
+    expect(ans).toStrictEqual({
+      x: [1, 2, 3],
+      y: [1, 2, 3],
+    });
+  });
+
+
   it('equallySpaced slot', function () {
     let x = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     let y = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
