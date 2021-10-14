@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/mljs/array-xy/tree/master/packages/array-xy-closest-x#readme",
   "dependencies": {
-    "ml-array-mean": "^1.1.2"
+    "ml-array-mean": "^1.1.5"
   },
   "gitHead": "5492ab43b72cd1ca20367c5df4187951dbe19038"
 }
