@@ -25,7 +25,7 @@ export default function equallySpacedSmooth(x, y, from, to, numberOfPoints) {
   let min = from - halfStep;
   let max = from + halfStep;
 
-  let previousX = Number.MIN_VALUE;
+  let previousX = Number.MIN_SAFE_INTEGER;
   let previousY = 0;
   let nextX = x[0] - initialOriginalStep;
   let nextY = 0;
@@ -45,11 +45,11 @@ export default function equallySpacedSmooth(x, y, from, to, numberOfPoints) {
 
   let add = 0;
   main: while (true) {
+    if (previousX >= nextX) throw new Error('x must be a growing series');
     if (previousX <= min && min <= nextX) {
       add = integral(0, min - previousX, slope, previousY);
       sumAtMin = currentValue + add;
     }
-
     while (nextX - max >= 0) {
       // no overlap with original point, just consume current value
       add = integral(0, max - previousX, slope, previousY);

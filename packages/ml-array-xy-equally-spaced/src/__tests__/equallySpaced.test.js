@@ -15,6 +15,19 @@ describe('equallySpaced', () => {
     ).toThrow('greater than 1');
   });
 
+  it('non growing', function () {
+    let x = [0, 0, 0, 1, 1, 1, 2, 2, 2];
+    let y = [0, 1, 2, 3, 4, 5, 6, 7, 8];
+    expect(() =>
+      equallySpaced(
+        { x, y },
+        {
+          numberOfPoints: 5,
+        },
+      ),
+    ).toThrow('x must be a growing series');
+  });
+
   it('equallySpaced smooth', function () {
     let x = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     let y = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];

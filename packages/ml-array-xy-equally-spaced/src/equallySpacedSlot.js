@@ -38,7 +38,7 @@ export default function equallySpacedSlot(x, y, from, to, numberOfPoints) {
   let j = 0; // index of output
 
   main: while (true) {
-    if (previousX >= nextX) throw new Error('x must be an increasing serie');
+    if (previousX >= nextX) throw new Error('x must be a growing series');
     while (previousX - max > 0) {
       // no overlap with original point, just consume current value
       if (backOutsideSpectra) {

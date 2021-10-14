@@ -27,7 +27,7 @@ export default function maxY(points, options = {}) {
     to.index = calculateIndex(to.value, x, reverse);
   }
 
-  let currentMax = Number.MIN_VALUE;
+  let currentMax = Number.MIN_SAFE_INTEGER;
   let currentIndex;
   for (let i = from.index; i < to.index; i++) {
     if (currentMax < y[i]) {
