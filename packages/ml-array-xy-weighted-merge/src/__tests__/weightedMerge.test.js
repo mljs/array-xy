@@ -2,8 +2,6 @@ import { toBeDeepCloseTo } from 'jest-matcher-deep-close-to';
 
 import weightedMerge from '..';
 
-// eslint-disable-next-line import/no-extraneous-dependencies
-
 expect.extend({ toBeDeepCloseTo });
 
 const points = {

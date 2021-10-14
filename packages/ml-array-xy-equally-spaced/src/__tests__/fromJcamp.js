@@ -1,36 +1,36 @@
 import equallySpaced from '..';
 
-describe('on jcamp data', function () {
+describe('on jcamp data', () => {
   let data = require('./data/jcamp.json');
 
-  it('inbound', function () {
+  it('inbound', () => {
     let ans = equallySpaced(data, {
       from: 100,
       to: 1500,
       numberOfPoints: 1000,
     });
-    ans.y.map((y) => expect(y).not.toBe(NaN));
+    ans.y.map((y) => expect(y).not.toBeNaN());
   });
 
-  it('out of bounds start', function () {
+  it('out of bounds start', () => {
     let ans = equallySpaced(data, {
       from: 0,
       to: 1500,
       numberOfPoints: 1000,
     });
-    ans.y.map((y) => expect(y).not.toBe(NaN));
+    ans.y.map((y) => expect(y).not.toBeNaN());
   });
 
-  it('out of bounds end', function () {
+  it('out of bounds end', () => {
     let ans = equallySpaced(data, {
       from: 1000,
       to: 4500,
       numberOfPoints: 1000,
     });
-    ans.y.map((y) => expect(y).not.toBe(NaN));
+    ans.y.map((y) => expect(y).not.toBeNaN());
   });
 
-  it('completely out of bounds', function () {
+  it('completely out of bounds', () => {
     let ans = equallySpaced(data, {
       from: 3000,
       to: 4500,

@@ -1,7 +1,7 @@
 import equallySpaced from '..';
 
 describe('equallySpaced', () => {
-  it('testing 1 points', function () {
+  it('testing 1 points', () => {
     let x = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     let y = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
@@ -15,7 +15,7 @@ describe('equallySpaced', () => {
     ).toThrow('greater than 1');
   });
 
-  it('non growing', function () {
+  it('non growing', () => {
     let x = [0, 0, 0, 1, 1, 1, 2, 2, 2];
     let y = [0, 1, 2, 3, 4, 5, 6, 7, 8];
     expect(() =>
@@ -28,7 +28,7 @@ describe('equallySpaced', () => {
     ).toThrow('x must be a growing series');
   });
 
-  it('equallySpaced smooth', function () {
+  it('equallySpaced smooth', () => {
     let x = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     let y = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
@@ -75,7 +75,7 @@ describe('equallySpaced', () => {
     });
   });
 
-  it('equallySpaced slot', function () {
+  it('equallySpaced slot', () => {
     let x = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     let y = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
@@ -183,7 +183,7 @@ describe('equallySpaced', () => {
     });
   });
 
-  it('changing from and to', function () {
+  it('changing from and to', () => {
     let x = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     let y = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
@@ -203,7 +203,7 @@ describe('equallySpaced', () => {
     });
   });
 
-  it('testing exclusions', function () {
+  it('testing exclusions', () => {
     let x = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     let y = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
@@ -224,7 +224,7 @@ describe('equallySpaced', () => {
     });
   });
 
-  it('many exclusions with 2 points', function () {
+  it('many exclusions with 2 points', () => {
     let x = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     let y = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
@@ -247,7 +247,7 @@ describe('equallySpaced', () => {
     });
   });
 
-  it('testing inverted exclusions', function () {
+  it('testing inverted exclusions', () => {
     let x = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     let y = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
@@ -268,7 +268,7 @@ describe('equallySpaced', () => {
     });
   });
 
-  it('testing zones', function () {
+  it('testing zones', () => {
     let x = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     let y = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
@@ -292,7 +292,7 @@ describe('equallySpaced', () => {
     });
   });
 
-  it('testing one zones', function () {
+  it('testing one zones', () => {
     let x = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     let y = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 

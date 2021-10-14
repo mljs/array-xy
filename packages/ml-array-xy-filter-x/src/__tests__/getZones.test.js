@@ -1,7 +1,7 @@
 import getZones from '../getZones';
 
 describe('getZones', () => {
-  it('no options', function () {
+  it('no options', () => {
     let zones = getZones(0, 10);
     expect(zones).toStrictEqual([
       {
@@ -11,7 +11,7 @@ describe('getZones', () => {
     ]);
   });
 
-  it('one exclusion', function () {
+  it('one exclusion', () => {
     let zones = getZones(0, 10, [{ from: 2, to: 4 }]);
     expect(zones).toStrictEqual([
       {
@@ -25,7 +25,7 @@ describe('getZones', () => {
     ]);
   });
 
-  it('two symmetric exclusion', function () {
+  it('two symmetric exclusion', () => {
     let zones = getZones(0, 10, [
       { from: 2, to: 4 },
       { from: 6, to: 8 },
@@ -46,7 +46,7 @@ describe('getZones', () => {
     ]);
   });
 
-  it('two exclusion', function () {
+  it('two exclusion', () => {
     let zones = getZones(0, 12, [
       { from: 1, to: 2 },
       { from: 3, to: 4 },
@@ -67,7 +67,7 @@ describe('getZones', () => {
     ]);
   });
 
-  it('overlaping exclusionsn', function () {
+  it('overlaping exclusionsn', () => {
     let zones = getZones(0, 10, [
       { from: 2, to: 4 },
       { from: 2, to: 8 },
@@ -84,7 +84,7 @@ describe('getZones', () => {
     ]);
   });
 
-  it('outside range exclusion', function () {
+  it('outside range exclusion', () => {
     let zones = getZones(0, 10, [
       { from: -2, to: -4 },
       { from: 12, to: 14 },
@@ -97,7 +97,7 @@ describe('getZones', () => {
     ]);
   });
 
-  it('partial outside range exclusion', function () {
+  it('partial outside range exclusion', () => {
     let zones = getZones(0, 10, [
       { from: -2, to: 2 },
       { from: 8, to: 12 },
@@ -110,7 +110,7 @@ describe('getZones', () => {
     ]);
   });
 
-  it('two exclusions with one outside range', function () {
+  it('two exclusions with one outside range', () => {
     let zones = getZones(0, 3, [
       { from: 1, to: 2 },
       { from: 4, to: 5 },
