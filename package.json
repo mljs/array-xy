@@ -1,15 +1,20 @@
 {
-  "private": true,
   "name": "ml-array-xy",
   "version": "0.1.0",
-  "main": "./src/index.js",
+  "main": "lib/index.js",
+  "module": "src/index.js",
+  "files": [
+    "src",
+    "lib"
+  ],
   "description": "Functional utilities for sets of points",
   "scripts": {
     "bootstrap": "lerna bootstrap --no-ci",
     "eslint": "eslint packages/**/*.js --cache",
     "eslint-fix": "npm run eslint -- --fix",
     "prepare": "npm run bootstrap",
-    "publish": "git pull --rebase && npm run build-lerna && npm run test-publish && lerna publish",
+    "prepack": "rollup -c",
+    "publish": "lerna publish -y --no-verify-access",
     "test": "jest && npm run eslint",
     "test-only": "jest",
     "upgrade": "find packages -type f -name 'package.json' -maxdepth 2 -execdir ncu --upgrade \\;"
