@@ -16,6 +16,7 @@
     "prepack": "rollup -c",
     "publish": "lerna publish -y --no-verify-access",
     "test": "jest && npm run eslint",
+    "test-coverage": "jest --coverage",
     "test-only": "jest",
     "upgrade": "find packages -type f -name 'package.json' -maxdepth 2 -execdir ncu --upgrade \\;"
   },
