@@ -19,7 +19,6 @@
     "url": "https://github.com/mljs/array-xy/issues"
   },
   "homepage": "https://github.com/mljs/array-xy/tree/master/packages/array-xy-max-merge#readme",
-  "gitHead": "5492ab43b72cd1ca20367c5df4187951dbe19038",
   "devDependencies": {
     "jest-matcher-deep-close-to": "^3.0.2"
   }

@@ -24,6 +24,5 @@
     "ml-array-sequential-fill": "^1.1.7",
     "ml-zones": "^0.1.0",
     "num-sort": "^2.0.0"
-  },
-  "gitHead": "5492ab43b72cd1ca20367c5df4187951dbe19038"
+  }
 }
