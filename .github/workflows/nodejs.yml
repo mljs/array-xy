@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2-beta
+      - uses: actions/setup-node@v2
         with:
           node-version: 16.x
       - name: Install dependencies
@@ -35,6 +35,8 @@ jobs:
         run: npm install
       - name: Bootstrap using lerna
         run: npm run bootstrap
+      - name: Build all lerna projects
+        run: npm run build-lerna
       - name: Run tests
         run: npm run test-coverage
       - name: Send coverage report to Codecov
