@@ -1,6 +1,6 @@
 {
   "name": "ml-array-xy-integrate",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Integrates y values. The x array has to be ordered and increasing.",
   "main": "lib/index.js",
   "module": "src/index.js",
@@ -26,6 +26,6 @@
   },
   "homepage": "https://github.com/mljs/array-sy/#readme",
   "dependencies": {
-    "ml-arrayxy-closestx": "^2.0.2"
+    "ml-arrayxy-closestx": "^2.0.3"
   }
 }

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.1](https://github.com/mljs/array-xy/compare/ml-array-xy-equally-spaced@1.2.0...ml-array-xy-equally-spaced@1.2.1) (2021-10-19)
+
+
+### Bug Fixes
+
+* throw error in case not growing series ([ab1c17b](https://github.com/mljs/array-xy/commit/ab1c17b9159780f82bb687ee8b4cdf91e13d5c32))
+
+
+
+
+
 # [1.2.0](https://github.com/mljs/array-xy/compare/ml-array-xy-equally-spaced@1.0.1...ml-array-xy-equally-spaced@1.2.0) (2021-03-04)
 
 
