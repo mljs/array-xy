@@ -11,8 +11,6 @@ jobs:
     # Documentation: https://github.com/zakodium/workflows#nodejs-ci
     uses: zakodium/workflows/.github/workflows/nodejs.yml@nodejs-v1
     with:
-      node-version-matrix: '[16]'      
-      npm-setup-command: 'npm install && npm run bootstrap && npm run eslint'
-    with:
       node-version-matrix: '[12, 14, 16]'
+      npm-setup-command: 'npm install && npm run bootstrap && npm run eslint'
       test-setup-command: 'npm run bootstrap && npm run build-lerna'
